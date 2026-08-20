@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Immigration Law Firm, US | Founder Optional | Case Study</title>
+<meta name="description" content="A U.S. immigration law firm cut the founder's day to day case involvement by 95%, built one interconnected operating system, and let him take a month off.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#08080A;
+    --ink-2:#0E0E11;
+    --ink-3:#141418;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.16);
+    --paper:#F2EEE6;
+    --paper-dim:rgba(242,238,230,.62);
+    --paper-faint:rgba(242,238,230,.38);
+    --gold:#D9A94C;
+    --gold-soft:rgba(217,169,76,.13);
+    --rust:#C4643C;
+    --rust-soft:rgba(196,100,60,.13);
+    --green:#5FD08A;
+    --green-soft:rgba(95,208,138,.13);
+    --serif:'Instrument Serif', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --pad: clamp(20px, 4vw, 72px);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);color:var(--paper);font-family:var(--sans);
+    font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  body::before{
+    content:'';position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+
+  #progress{position:fixed;top:0;left:0;height:2px;width:0%;z-index:100;background:linear-gradient(90deg,var(--rust),var(--gold),var(--green));transition:width .1s linear}
+
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;
+    justify-content:space-between;padding:14px var(--pad);backdrop-filter:blur(14px);
+    background:rgba(8,8,10,0);border-bottom:1px solid transparent;
+    transition:background .4s ease,border-color .4s ease,padding .4s ease;
+  }
+  nav.stuck{background:rgba(8,8,10,.85);border-bottom-color:var(--line);padding:11px var(--pad)}
+  .nav-mark{font-size:clamp(11px,1.2vw,13px);font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--paper-dim)}
+  .nav-mark b{color:var(--paper);font-weight:500}
+  .nav-cta{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;color:var(--ink);
+    background:var(--paper);text-decoration:none;padding:10px 20px;border-radius:100px;
+    transition:background .3s ease,transform .3s ease;white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--gold);transform:translateY(-1px)}
+
+  section{position:relative;z-index:2;padding:clamp(54px,7vw,98px) var(--pad)}
+  .wrap{max-width:1220px;margin:0 auto}
+  .narrow{max-width:840px;margin:0 auto}
+
+  .eyebrow{font-size:clamp(14px,1.7vw,19px);letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:22px}
+  .eyebrow::after{content:'';flex:1;height:1px;background:var(--line);max-width:120px}
+
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.2vw,60px);line-height:1.04;letter-spacing:-.02em;margin-bottom:20px}
+  h2 em{font-style:italic;color:var(--gold)}
+  h2:has(+.h2sub),h2:has(+.h2sub[style]){margin-bottom:16px}
+  .rule{width:clamp(40px,4.4vw,56px);height:2px;background:var(--gold);border-radius:2px;margin-bottom:clamp(16px,1.9vw,22px)}
+  .relief .rule,.final .rule{margin-left:auto;margin-right:auto}
+  .h2sub{font-family:var(--serif);font-weight:400;font-size:clamp(21px,2.9vw,33px);line-height:1.16;
+         letter-spacing:-.018em;color:var(--paper-dim);margin-bottom:20px;max-width:28ch}
+  .h2sub em{font-style:italic;color:var(--gold)}
+  .lede{font-size:clamp(19px,2.1vw,24px);line-height:1.55;color:var(--paper-dim);max-width:60ch}
+  .lede strong{color:var(--paper);font-weight:400}
+
+  /* ── hero ───────────────────────────────── */
+  .hero{min-height:auto;display:flex;flex-direction:column;justify-content:center;padding-top:clamp(112px,14vw,150px);padding-bottom:clamp(48px,6vw,72px);overflow:hidden}
+  .hero::after{
+    content:'';position:absolute;z-index:-1;width:min(150vw,1500px);height:min(150vw,1500px);
+    top:-60%;right:-35%;border-radius:50%;
+    background:radial-gradient(circle,rgba(217,169,76,.13) 0%,rgba(196,100,60,.06) 38%,transparent 66%);filter:blur(30px);
+  }
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:12px;align-self:flex-start;
+    border:1px solid var(--line-2);border-radius:100px;padding:7px 16px 7px 12px;margin-bottom:28px;
+    font-size:clamp(12px,1.4vw,14px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+  .client{font-size:clamp(14px,1.9vw,19px);letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--paper-faint);margin-bottom:16px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,11vw,140px);line-height:.9;letter-spacing:-.035em;margin-bottom:24px}
+  h1 .it{font-style:italic;display:block;color:var(--gold)}
+  .hero-sub{font-size:clamp(19px,2.2vw,26px);line-height:1.42;color:var(--paper-dim);max-width:40ch;margin-bottom:42px}
+  .hero-sub b{color:var(--paper);font-weight:400}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:46px}
+
+  .btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-size:14px;font-weight:500;padding:16px 30px;border-radius:100px;transition:all .35s cubic-bezier(.22,1,.36,1)}
+  .btn-primary{background:var(--paper);color:var(--ink)}
+  .btn-primary:hover{background:var(--gold);transform:translateY(-2px);box-shadow:0 14px 40px rgba(217,169,76,.28)}
+  .btn-ghost{border:1px solid var(--line-2);color:var(--paper-dim)}
+  .btn-ghost:hover{border-color:var(--paper);color:var(--paper)}
+  .btn .arw{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+  .btn:hover .arw{transform:translateX(4px)}
+
+  /* ── hero stats ─────────────────────────── */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+  .stat{padding:24px 24px 0 0;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:none}
+  .stat .n{font-family:var(--serif);font-size:clamp(36px,5vw,62px);line-height:1;letter-spacing:-.02em;display:flex;align-items:center;gap:14px;margin-bottom:10px}
+  .stat .n span{color:var(--gold)}
+  .stat.up .n{color:var(--green)}
+  .stat.up .n span{color:var(--green)}
+  .stat .l{font-size:clamp(13px,1.4vw,15px);letter-spacing:.05em;color:var(--paper-faint);line-height:1.45;max-width:22ch}
+  .uparrow{width:clamp(26px,3.4vw,40px);height:auto;flex-shrink:0}
+  .spark{display:block;margin-top:14px;width:100%;max-width:180px;height:auto}
+
+  /* ── illustration primitives ────────────── */
+  .ill{display:block;width:100%;height:auto}
+  .figure{border:1px solid var(--line);border-radius:6px;background:var(--ink-2);padding:clamp(16px,2.1vw,26px);position:relative;overflow:hidden}
+  .figure .cap{
+    font-size:clamp(12px,1.3vw,14px);letter-spacing:.16em;text-transform:uppercase;color:var(--paper-faint);
+    margin-top:14px;display:flex;align-items:center;gap:10px;
+  }
+  .figure .cap::before{content:'';width:16px;height:1px;background:var(--gold)}
+
+  .draw path,.draw line,.draw circle,.draw rect,.draw polyline{
+    stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);
+    transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
+  }
+  .rv.in .draw path,.rv.in .draw line,.rv.in .draw circle,.rv.in .draw rect,.rv.in .draw polyline{stroke-dashoffset:0}
+  .grow{transform:scaleY(0);transform-origin:bottom;transform-box:fill-box;transition:transform 1s cubic-bezier(.22,1,.36,1)}
+  .rv.in .grow{transform:scaleY(1)}
+  .fadein{opacity:0;transition:opacity .9s ease .5s}
+  .rv.in .fadein{opacity:1}
+
+  .ico{width:22px;height:22px;flex-shrink:0;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .ico.red{stroke:var(--rust)}
+  .ico.grn{stroke:var(--green)}
+  .icobox{
+    width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:var(--gold-soft);border:1px solid rgba(217,169,76,.2);margin-bottom:24px;
+  }
+  .icobox.red{background:var(--rust-soft);border-color:rgba(196,100,60,.24)}
+
+  /* ── challenge ──────────────────────────── */
+  .split{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,4.4vw,68px);align-items:start}
+  .gaps{list-style:none;margin-top:8px}
+  .gaps li{display:flex;gap:16px;padding:19px 0;border-bottom:1px solid var(--line);font-size:clamp(16px,1.7vw,18px);color:var(--paper-dim);line-height:1.55;align-items:flex-start}
+  .gaps li:first-child{border-top:1px solid var(--line)}
+  .gaps b{color:var(--paper);font-weight:400}
+  .gaps .ico{margin-top:3px}
+
+  /* ── approach ───────────────────────────── */
+  .approach{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+  .ap{background:var(--ink);padding:clamp(22px,2.6vw,30px);transition:background .4s ease}
+  .ap:hover{background:var(--ink-3)}
+  .ap .num{font-family:var(--serif);font-size:13px;letter-spacing:.1em;color:var(--gold);display:block;margin-bottom:18px}
+  .ap h3{font-size:clamp(18px,1.9vw,21px);font-weight:500;letter-spacing:-.01em;margin-bottom:12px;line-height:1.3}
+  .ap p{font-size:clamp(15px,1.6vw,17px);color:var(--paper-faint);line-height:1.55}
+
+  .leak{
+    margin-top:40px;border:1px solid rgba(217,169,76,.28);background:var(--gold-soft);border-radius:6px;
+    padding:clamp(24px,3vw,36px);display:flex;gap:clamp(18px,2.4vw,30px);align-items:center;flex-wrap:wrap;
+  }
+  .leak .tag{font-size:clamp(13px,1.5vw,16px);letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--gold);white-space:nowrap}
+  .leak p{font-family:var(--serif);font-size:clamp(20px,2.7vw,32px);line-height:1.28;flex:1;min-width:260px}
+
+  /* ── steps ──────────────────────────────── */
+  .step{display:grid;grid-template-columns:96px 1fr;gap:clamp(18px,3vw,44px);padding:clamp(34px,3.6vw,50px) 0;border-bottom:1px solid var(--line)}
+  .step:first-of-type{border-top:1px solid var(--line)}
+  .step-n{font-family:var(--serif);font-size:clamp(40px,5vw,68px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(242,238,230,.28);transition:color .5s ease,-webkit-text-stroke-color .5s ease}
+  .step:hover .step-n{color:var(--gold);-webkit-text-stroke-color:var(--gold)}
+  .step h3{font-family:var(--serif);font-weight:400;font-size:clamp(31px,4.7vw,56px);line-height:1.04;letter-spacing:-.028em;margin-bottom:14px;display:flex;align-items:center;gap:clamp(12px,1.6vw,18px)}
+  .hico{width:clamp(22px,2.7vw,34px);height:clamp(22px,2.7vw,34px);stroke-width:1.15;opacity:.9}
+  .step .sub{font-size:clamp(18px,2vw,23px);font-weight:500;color:var(--paper);line-height:1.32;letter-spacing:-.012em;margin-bottom:14px;max-width:46ch}
+  .step p.d{font-size:clamp(17px,1.8vw,19px);color:var(--paper-dim);max-width:56ch;line-height:1.58}
+
+  .bullets{list-style:none;margin-top:24px;display:grid;gap:15px;max-width:64ch}
+  .bullets li{display:flex;gap:14px;font-size:clamp(16px,1.7vw,18px);color:var(--paper-faint);line-height:1.55;align-items:flex-start}
+  .bullets .ico{width:18px;height:18px;margin-top:3px}
+  .bullets b{color:var(--paper);font-weight:500;display:block;margin-bottom:2px}
+
+  .metric-inline{display:inline-flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:22px;border:1px solid var(--line-2);border-radius:6px;padding:16px 24px}
+  .metric-inline .t{font-size:clamp(14px,1.5vw,16px);color:var(--paper-faint);max-width:30ch}
+
+  .ring{width:72px;height:72px;flex-shrink:0}
+  .ring .bg{fill:none;stroke:var(--line-2);stroke-width:6}
+  .ring .fg{fill:none;stroke:var(--gold);stroke-width:6;stroke-linecap:round;stroke-dasharray:201;stroke-dashoffset:201;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.6s cubic-bezier(.22,1,.36,1) .2s}
+  .rv.in .ring .fg{stroke-dashoffset:20}
+  .ring text{font-family:var(--serif);font-size:22px;fill:var(--paper)}
+
+  /* ── image placeholder ──────────────────── */
+  .imgslot{
+    margin-top:26px;border:1px dashed var(--line-2);border-radius:6px;background:var(--ink-2);
+    aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:8px;text-align:center;padding:24px;
+  }
+  .imgslot .ico{width:26px;height:26px;margin-bottom:6px}
+  .imgslot .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .imgslot .n{font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);color:var(--paper-dim)}
+  .imgslot .s{font-size:12px;color:var(--paper-faint);font-family:ui-monospace,Menlo,monospace}
+
+  /* ── results ────────────────────────────── */
+  .results{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:38px}
+  .r{background:var(--ink-2);padding:clamp(26px,3vw,38px);display:flex;flex-direction:column;gap:16px}
+  .r .vis{height:96px;display:flex;align-items:flex-end}
+  .r .big{font-family:var(--serif);font-size:clamp(42px,6.2vw,76px);line-height:.95;letter-spacing:-.03em;color:var(--gold)}
+  .r .big.grn{color:var(--green)}
+  .r .big.word{font-size:clamp(28px,4vw,48px);color:var(--paper)}
+  .r p{font-size:clamp(16px,1.7vw,18px);color:var(--paper-dim);line-height:1.5}
+
+  /* ── timeline ───────────────────────────── */
+  .timeline{margin-top:46px;border-top:1px solid var(--line);padding-top:36px}
+  .tl-head{font-size:clamp(13px,1.5vw,17px);letter-spacing:.2em;text-transform:uppercase;color:var(--paper-faint);margin-bottom:24px}
+  .tl{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .tl-item{position:relative;padding:30px 22px 0 0}
+  .tl-item::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--line)}
+  .tl-item::after{content:'';position:absolute;top:-5px;left:0;width:10px;height:10px;border-radius:50%;background:var(--ink-2);border:2px solid var(--gold)}
+  .tl-item:last-child::after{background:var(--green);border-color:var(--green);box-shadow:0 0 16px rgba(95,208,138,.5)}
+  .tl-item .w{font-family:var(--serif);font-size:clamp(26px,2.8vw,32px);color:var(--gold);margin-bottom:8px}
+  .tl-item:last-child .w{color:var(--green)}
+  .tl-item p{font-size:clamp(15px,1.6vw,17px);color:var(--paper-faint);line-height:1.5;max-width:28ch}
+
+  /* ── relief ─────────────────────────────── */
+  .relief{text-align:center;position:relative;overflow:hidden}
+  .relief::after{content:'';position:absolute;z-index:-1;left:50%;top:50%;transform:translate(-50%,-50%);width:min(120vw,1100px);height:min(120vw,1100px);border-radius:50%;background:radial-gradient(circle,rgba(95,208,138,.09) 0%,transparent 62%)}
+  .relief .eyebrow{justify-content:center}
+  .relief .eyebrow::after,.relief .eyebrow::before{content:'';flex:none;width:60px;height:1px;background:var(--line)}
+  .relief h2{font-size:clamp(38px,6.6vw,80px);max-width:16ch;margin:0 auto 24px}
+  .relief .lede{margin:0 auto}
+  .weekvis{max-width:620px;margin:40px auto 0}
+
+  .quoteslot{max-width:760px;margin:36px auto 0;border:1px dashed var(--line-2);border-radius:6px;padding:clamp(24px,3vw,34px);background:var(--ink-2);text-align:left}
+  .quoteslot .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+  .quoteslot p{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,30px);line-height:1.3;color:var(--paper-dim)}
+  .quoteslot .h{font-size:12px;color:var(--paper-faint);margin-top:16px;font-family:ui-monospace,Menlo,monospace}
+
+  /* ── insight ────────────────────────────── */
+  .insight{background:var(--paper);color:var(--ink);text-align:center}
+  .insight .eyebrow{color:var(--rust);justify-content:center}
+  .insight .eyebrow::after,.insight .eyebrow::before{content:'';flex:none;width:60px;height:1px;background:rgba(8,8,10,.16)}
+  .insight blockquote{font-family:var(--serif);font-size:clamp(30px,5.6vw,66px);line-height:1.1;letter-spacing:-.025em;max-width:17ch;margin:0 auto}
+  .insight .attr{margin-top:28px;font-size:clamp(12px,1.4vw,15px);letter-spacing:.24em;text-transform:uppercase;color:rgba(8,8,10,.45);font-weight:500}
+  .insight .quotemark{width:40px;height:auto;margin:0 auto 18px;display:block;opacity:.32}
+
+  /* ── final ──────────────────────────────── */
+  .final{text-align:center;position:relative;overflow:hidden;padding-top:clamp(70px,9vw,120px)}
+  .final::after{content:'';position:absolute;z-index:-1;left:50%;bottom:-55%;transform:translateX(-50%);width:min(140vw,1300px);height:min(140vw,1300px);border-radius:50%;background:radial-gradient(circle,rgba(196,100,60,.14) 0%,rgba(217,169,76,.06) 40%,transparent 66%);filter:blur(24px)}
+  .final h2{font-size:clamp(38px,7vw,84px);max-width:14ch;margin:0 auto 22px}
+  .final .lede{margin:0 auto 34px;text-align:center}
+
+  footer{border-top:1px solid var(--line);padding:26px var(--pad);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:12px;letter-spacing:.06em;color:var(--paper-faint);position:relative;z-index:2}
+  footer a{color:var(--paper-dim);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+  footer a:hover{color:var(--gold);border-color:var(--gold)}
+
+  .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+  .rv.in{opacity:1;transform:none}
+
+  @media(max-width:1000px){
+    .approach{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr;gap:40px}
+    .rgrid{grid-template-columns:1fr}
+    .tl{grid-template-columns:1fr;gap:32px}
+    .tl-item{padding-right:0}
+  }
+  @media(max-width:720px){
+    .stats{grid-template-columns:1fr}
+    .stat{border-right:none;border-bottom:1px solid var(--line);padding:26px 0}
+    .stat:last-child{border-bottom:none}
+    .step{grid-template-columns:1fr;gap:16px}
+    .step-n{font-size:38px}
+    .step h3{gap:12px}
+    .hico{width:20px;height:20px}
+    .nav-cta{display:none}
+    .hero-actions .btn{flex:1;justify-content:center}
+  }
+  @media(max-width:520px){.approach{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .rv{opacity:1;transform:none}
+    .draw path,.draw line,.draw circle,.draw rect,.draw polyline{stroke-dashoffset:0}
+    .grow{transform:none}.fadein{opacity:1}
+    .ring .fg{stroke-dashoffset:20}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<nav id="nav">
+  <div class="nav-mark">Case Study &nbsp;·&nbsp; <b>Immigration Law Firm, US</b></div>
+  <a class="nav-cta" href="#book">Book a call</a>
+</nav>
+
+<!-- ═══ 1. HERO ════════════════════════════════ -->
+<header class="hero">
+  <div class="wrap" style="width:100%">
+    <div class="hero-tag rv"><span class="dot"></span> Fractional COO · Operations Case Study</div>
+    <div class="client rv">Immigration Law Firm, US</div>
+    <h1 class="rv">Founder<span class="it">Optional</span></h1>
+    <p class="hero-sub rv">A U.S. immigration law firm handling <b>O-1 and other high-stakes cases</b>, where the founder was still running intake, managing the team, and holding the practice together himself.</p>
+
+    <div class="hero-actions rv">
+      <a class="btn btn-primary" href="#book">Book a discovery call <span class="arw">→</span></a>
+      <a class="btn btn-ghost" href="#challenge">Read the case study</a>
+    </div>
+
+    <!-- EXACTLY THREE STATS. Duration belongs in the timeline, not here. -->
+    <div class="stats">
+      <div class="stat up rv">
+        <div class="n">
+          <svg class="uparrow" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="19" fill="rgba(95,208,138,.12)" stroke="rgba(95,208,138,.35)"/>
+            <path d="M20 13V27" stroke="#5FD08A" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M13.5 20.5 20 27l6.5-6.5" stroke="#5FD08A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span data-count="95" data-prefix="-" data-suffix="%">-95%</span>
+        </div>
+        <div class="l">Founder's time in day to day case operations</div>
+        <svg class="spark" viewBox="0 0 180 44" fill="none" aria-hidden="true">
+          <path d="M2 6 C 26 8, 44 10, 62 14 S 100 20, 122 28 S 158 38, 178 41" stroke="#5FD08A" stroke-width="2" stroke-linecap="round"/>
+          <path d="M2 6 C 26 8, 44 10, 62 14 S 100 20, 122 28 S 158 38, 178 41 L178 44 L2 44Z" fill="url(#sg1)" opacity=".35"/>
+          <defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5FD08A" stop-opacity=".7"/>
+            <stop offset="1" stop-color="#5FD08A" stop-opacity="0"/>
+          </linearGradient></defs>
+          <circle cx="178" cy="41" r="3.2" fill="#5FD08A"/>
+        </svg>
+      </div>
+      <div class="stat rv">
+        <div class="n"><span data-count="4" data-suffix="">4</span></div>
+        <div class="l">Systems interconnected into one case engine</div>
+        <svg class="spark" viewBox="0 0 180 44" fill="none" aria-hidden="true">
+          <line x1="16" y1="22" x2="164" y2="22" stroke="rgba(217,169,76,.4)" stroke-width="1.4"/>
+          <g fill="rgba(217,169,76,.18)" stroke="#D9A94C" stroke-width="1.4">
+            <rect x="4" y="10" width="24" height="24" rx="5"/>
+            <rect x="56" y="10" width="24" height="24" rx="5"/>
+            <rect x="108" y="10" width="24" height="24" rx="5"/>
+            <rect x="152" y="10" width="24" height="24" rx="5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="stat rv">
+        <div class="n"><span>[X]+</span></div>
+        <div class="l">Team members running cases without the founder</div>
+        <svg class="spark" viewBox="0 0 180 44" fill="none" aria-hidden="true">
+          <g fill="rgba(217,169,76,.55)">
+            <circle cx="10" cy="14" r="4"/><circle cx="28" cy="14" r="4"/><circle cx="46" cy="14" r="4"/><circle cx="64" cy="14" r="4"/><circle cx="82" cy="14" r="4"/>
+            <circle cx="10" cy="30" r="4"/><circle cx="28" cy="30" r="4"/><circle cx="46" cy="30" r="4"/><circle cx="64" cy="30" r="4"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ 2. THE CHALLENGE ═══════════════════════ -->
+<!-- HEADING PATTERN: gold rule, section NAME big in serif, descriptive line as the deck. -->
+<section id="challenge">
+  <div class="wrap split">
+    <div>
+      <div class="rule rv"></div>
+      <h2 class="rv">The Challenge</h2>
+      <p class="h2sub rv">The founder was the <em>practice.</em></p>
+      <p class="lede rv">Every case moved through him. Every hire, every fire, every judgment call. There was no standard way to handle a case, no fixed path for a new client to enter the practice, and no way to see what was happening across the team without asking. The practice could not run for a week without him in it.</p>
+
+      <!-- Lead the before-state with a REAL screenshot slot, not a drawn diagram. -->
+      <div class="imgslot">
+        <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+        <span class="k">Image Placeholder</span>
+        <span class="n">The before state: case tracking split across email, spreadsheets, and memory</span>
+        <span class="s">img-01-before-state.png · 16:9 · 1600×900</span>
+      </div>
+    </div>
+
+    <div>
+      <p class="rv" style="font-size:clamp(13px,1.5vw,16px);letter-spacing:.17em;text-transform:uppercase;color:var(--paper-faint);margin-bottom:20px;font-weight:500">Underneath it, four operational gaps</p>
+      <ul class="gaps">
+        <li class="rv"><svg class="ico red" viewBox="0 0 24 24"><path d="M12 8v5"/><circle cx="12" cy="16" r=".6" fill="currentColor" stroke="none"/><path d="M10.3 3.9 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg><span><b>No standardized case handling.</b> Case quality and speed depended on which team member picked it up, not on a defined process.</span></li>
+        <li class="rv"><svg class="ico red" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span><b>No central visibility.</b> Case status, intake status, and team workload lived in separate tools nobody could see end to end.</span></li>
+        <li class="rv"><svg class="ico red" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c.7-3.6 3.2-5.6 6.5-5.6s5.8 2 6.5 5.6"/><path d="M16 4.3a3.2 3.2 0 0 1 0 6.2"/><path d="M17.5 14.4c2.7.5 4.5 2.3 5 5.6"/></svg><span><b>Hiring wasn't aligned to the vision.</b> The team in place did not match where the practice needed to go, so growth stalled instead of compounding.</span></li>
+        <li class="rv"><svg class="ico red" viewBox="0 0 24 24"><path d="M4 4v16l4-3h12V4Z"/><path d="M8 9h8M8 13h5"/></svg><span><b>Intake had no fixed path.</b> New clients entered the practice however they happened to arrive, so the founder had to personally shepherd the ones that mattered.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3. THE APPROACH ════════════════════════ -->
+<section id="approach" style="background:var(--ink-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="rule rv"></div>
+    <h2 class="rv">My Approach</h2>
+    <p class="h2sub rv">Systemize, <em>then</em> release.</p>
+    <p class="lede rv">Before automating anything, the practice's actual case flow had to be mapped end to end, and the team had to be rebuilt around people who fit where it was headed.</p>
+
+    <div class="approach">
+      <div class="ap rv"><span class="num">01</span><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></div><h3>Audit the Case Flow</h3><p>Mapped every step from first client contact through case resolution, including where founder involvement was actually required versus habitual.</p></div>
+      <div class="ap rv"><span class="num">02</span><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c.7-3.6 3.2-5.6 6.5-5.6s5.8 2 6.5 5.6"/><path d="M16 4.3a3.2 3.2 0 0 1 0 6.2"/><path d="M17.5 14.4c2.7.5 4.5 2.3 5 5.6"/></svg></div><h3>Rebuild the Team</h3><p>Let go of team members who didn't align with the direction of the practice, and hired case managers who did.</p></div>
+      <div class="ap rv"><span class="num">03</span><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div><h3>Build the Operating System</h3><p>Stood up the project management structure, case handling standards, and central visibility layer the team now runs on.</p></div>
+      <div class="ap rv"><span class="num">04</span><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div><h3>Automate and Interconnect</h3><p>Connected the case management, intake, and reporting tools with AI-powered workflows so repeatable work ran without manual handling.</p></div>
+    </div>
+
+    <!-- Highest-leverage sentence on the page. One line. Name the thing. -->
+    <div class="leak rv">
+      <svg class="ico" viewBox="0 0 24 24" style="width:32px;height:32px;flex-shrink:0"><path d="M12 2c3 4 6 7.5 6 11.5A6 6 0 0 1 6 13.5C6 9.5 9 6 12 2Z"/></svg>
+      <span class="tag">The Leak</span>
+      <p>The practice wasn't short on clients, it was short on a system that could run their cases without the founder standing in the middle of every one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 4. THE BUILD ═══════════════════════════ -->
+<section id="build">
+  <div class="wrap">
+    <div class="rule rv"></div>
+    <h2 class="rv">The Build</h2>
+    <p class="h2sub rv" style="margin-bottom:40px">Four moves, one <em>operating system.</em></p>
+
+    <div class="step rv">
+      <div class="step-n">01</div>
+      <div>
+        <h3><svg class="ico hico" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg><span>The Case Operating System</span></h3>
+        <p class="sub">One structure for every case, not a mental model per case manager.</p>
+        <p class="d">Built the practice's project management workspace from scratch in ClickUp, with a customized workflow for each case type, O-1 and beyond. Every case now moves through the same defined stages regardless of which case manager owns it, and nothing lives only in someone's head.</p>
+
+        <div class="figure" style="margin-top:24px">
+          <svg class="ill" viewBox="0 0 720 200" fill="none" aria-label="Case board with owner, priority, and due date columns">
+            <g font-family="Inter,sans-serif" font-size="9" letter-spacing="1.6" fill="rgba(242,238,230,.42)">
+              <text x="14" y="20">CASE</text><text x="330" y="20">OWNER</text>
+              <text x="470" y="20">STAGE</text><text x="600" y="20">DUE</text>
+            </g>
+            <line x1="10" y1="30" x2="710" y2="30" stroke="rgba(255,255,255,.12)"/>
+            <g class="fadein" style="transition-delay:.1s">
+              <rect x="10" y="42" width="700" height="34" rx="5" fill="rgba(255,255,255,.03)"/>
+              <rect x="22" y="55" width="150" height="8" rx="4" fill="rgba(242,238,230,.28)"/>
+              <circle cx="340" cy="59" r="9" fill="rgba(217,169,76,.28)"/>
+              <path d="M336 59.5l3 3 5.5-6" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <rect x="470" y="53" width="70" height="13" rx="6.5" fill="rgba(95,208,138,.2)"/>
+              <text x="479" y="63" font-family="Inter,sans-serif" font-size="8" fill="#5FD08A" letter-spacing="1">REVIEW</text>
+              <rect x="600" y="55" width="58" height="8" rx="4" fill="rgba(242,238,230,.2)"/>
+            </g>
+            <g class="fadein" style="transition-delay:.22s">
+              <rect x="10" y="84" width="700" height="34" rx="5" fill="rgba(255,255,255,.03)"/>
+              <rect x="22" y="97" width="130" height="8" rx="4" fill="rgba(242,238,230,.28)"/>
+              <circle cx="340" cy="101" r="9" fill="rgba(217,169,76,.28)"/>
+              <path d="M336 101.5l3 3 5.5-6" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <rect x="470" y="95" width="70" height="13" rx="6.5" fill="rgba(196,100,60,.22)"/>
+              <text x="479" y="105" font-family="Inter,sans-serif" font-size="8" fill="#C4643C" letter-spacing="1">FILING</text>
+              <rect x="600" y="97" width="58" height="8" rx="4" fill="rgba(242,238,230,.2)"/>
+            </g>
+            <g class="fadein" style="transition-delay:.34s">
+              <rect x="10" y="126" width="700" height="34" rx="5" fill="rgba(255,255,255,.03)"/>
+              <rect x="22" y="139" width="165" height="8" rx="4" fill="rgba(242,238,230,.28)"/>
+              <circle cx="340" cy="143" r="9" fill="rgba(217,169,76,.28)"/>
+              <path d="M336 143.5l3 3 5.5-6" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <rect x="470" y="137" width="70" height="13" rx="6.5" fill="rgba(217,169,76,.22)"/>
+              <text x="479" y="147" font-family="Inter,sans-serif" font-size="8" fill="#D9A94C" letter-spacing="1">INTAKE</text>
+              <rect x="600" y="139" width="58" height="8" rx="4" fill="rgba(242,238,230,.2)"/>
+            </g>
+          </svg>
+          <div class="cap">One board holds every active case, not memory</div>
+        </div>
+
+        <ul class="bullets">
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg><span><b>Customized case handling.</b> Each case type moves through its own defined stage sequence instead of an improvised one.</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span><b>Central visibility.</b> Case status, intake status, and workload now live in one place anyone can check.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step rv">
+      <div class="step-n">02</div>
+      <div>
+        <h3><svg class="ico hico" viewBox="0 0 24 24"><path d="M4 4v16l4-3h12V4Z"/><path d="M8 9h8M8 13h5"/></svg><span>Intake, Standardized</span></h3>
+        <p class="sub">New clients stopped waiting on the founder to notice them.</p>
+        <p class="d">Built a defined intake workflow from first contact through case assignment, so a new client's path into the practice stopped depending on who happened to see the message first, and the founder stopped being the default point of triage.</p>
+
+        <div class="figure" style="margin-top:24px">
+          <svg class="ill" viewBox="0 0 720 170" fill="none" aria-label="Intake moved from a manual chase to one continuous path">
+            <text x="20" y="26" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.8" fill="rgba(196,100,60,.85)">BEFORE</text>
+            <g class="fadein">
+              <rect x="20" y="38" width="130" height="30" rx="5" fill="rgba(196,100,60,.14)" stroke="rgba(196,100,60,.3)"/>
+              <rect x="196" y="38" width="130" height="30" rx="5" fill="rgba(196,100,60,.14)" stroke="rgba(196,100,60,.3)"/>
+              <rect x="372" y="38" width="130" height="30" rx="5" fill="rgba(196,100,60,.14)" stroke="rgba(196,100,60,.3)"/>
+              <rect x="548" y="38" width="130" height="30" rx="5" fill="rgba(196,100,60,.14)" stroke="rgba(196,100,60,.3)"/>
+              <g stroke="rgba(196,100,60,.5)" stroke-width="1.2" stroke-dasharray="3 4">
+                <path d="M150 53h46"/><path d="M326 53h46"/><path d="M502 53h46"/>
+              </g>
+              <text x="158" y="30" font-family="Inter,sans-serif" font-size="8" fill="rgba(196,100,60,.9)">wait on founder</text>
+            </g>
+            <text x="20" y="112" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.8" fill="#5FD08A">AFTER</text>
+            <g class="fadein" style="transition-delay:.35s">
+              <rect x="20" y="124" width="658" height="30" rx="15" fill="rgba(95,208,138,.12)" stroke="rgba(95,208,138,.4)"/>
+              <g stroke="#5FD08A" stroke-width="1.4" fill="none" stroke-linecap="round">
+                <path d="M186 139h56"/><path d="M232 133l7 6-7 6"/>
+                <path d="M406 139h56"/><path d="M452 133l7 6-7 6"/>
+              </g>
+              <circle cx="96" cy="139" r="7" fill="rgba(95,208,138,.3)"/>
+              <circle cx="602" cy="139" r="7" fill="rgba(95,208,138,.3)"/>
+            </g>
+          </svg>
+          <div class="cap">Intake moved off the founder's desk and onto a fixed path</div>
+        </div>
+
+        <div class="imgslot">
+          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span class="k">Image Placeholder</span>
+          <span class="n">The standardized intake workflow board</span>
+          <span class="s">img-02-intake-workflow.png · 16:9 · 1600×900</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step rv">
+      <div class="step-n">03</div>
+      <div>
+        <h3><svg class="ico hico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span>SOPs and Automation</span></h3>
+        <p class="sub">The repeatable work stopped needing a person to remember it.</p>
+        <p class="d">Documented an SOP library for the practice's recurring case and intake work, then built AI-powered automation connecting the case management, CRM, and intake systems so the repeatable steps ran without manual handling. Four platforms, ClickUp, Docketwise, GoHighLevel, and Lawmatics, now operate as one interconnected system instead of four separate habits.</p>
+
+        <div class="figure" style="margin-top:24px">
+          <svg class="ill" viewBox="0 0 720 190" fill="none" aria-label="Four systems interconnected into one automated case engine">
+            <g class="fadein">
+              <rect x="20" y="16" width="150" height="36" rx="7" fill="rgba(255,255,255,.03)" stroke="rgba(217,169,76,.35)"/>
+              <text x="95" y="39" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1" fill="#F2EEE6">ClickUp</text>
+              <rect x="190" y="16" width="150" height="36" rx="7" fill="rgba(255,255,255,.03)" stroke="rgba(217,169,76,.35)"/>
+              <text x="265" y="39" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1" fill="#F2EEE6">Docketwise</text>
+              <rect x="360" y="16" width="150" height="36" rx="7" fill="rgba(255,255,255,.03)" stroke="rgba(217,169,76,.35)"/>
+              <text x="435" y="39" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1" fill="#F2EEE6">GoHighLevel</text>
+              <rect x="530" y="16" width="150" height="36" rx="7" fill="rgba(255,255,255,.03)" stroke="rgba(217,169,76,.35)"/>
+              <text x="605" y="39" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1" fill="#F2EEE6">Lawmatics</text>
+            </g>
+            <g class="draw" style="--len:80" stroke="rgba(217,169,76,.45)" stroke-width="1.2">
+              <path d="M95 52v20"/><path d="M265 52v20"/><path d="M435 52v20"/><path d="M605 52v20"/>
+            </g>
+            <g class="fadein" style="transition-delay:.3s">
+              <rect x="90" y="72" width="540" height="46" rx="9" fill="rgba(217,169,76,.1)" stroke="rgba(217,169,76,.5)"/>
+              <text x="360" y="92" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2.2" fill="#D9A94C">AI-POWERED AUTOMATION LAYER</text>
+              <text x="360" y="109" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.2" fill="rgba(242,238,230,.45)">SOPs · CASE ROUTING · CLIENT COMMUNICATION</text>
+            </g>
+            <g class="draw" style="--len:60" stroke="rgba(95,208,138,.45)" stroke-width="1.2">
+              <path d="M360 118v22"/>
+            </g>
+            <g class="fadein" style="transition-delay:.5s">
+              <rect x="270" y="148" width="180" height="34" rx="17" fill="rgba(95,208,138,.12)" stroke="rgba(95,208,138,.4)"/>
+              <text x="360" y="169" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.6" fill="#5FD08A">CASE MOVES ITSELF</text>
+            </g>
+          </svg>
+          <div class="cap">Four systems now run as one, instead of four separate manual habits</div>
+        </div>
+
+        <ul class="bullets">
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg><span><b>SOP library built from scratch.</b> Every recurring case and intake step now has a documented standard.</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span><b>AI-powered automation.</b> Repeatable case and intake work now runs without manual handling.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step rv">
+      <div class="step-n">04</div>
+      <div>
+        <h3><svg class="ico hico" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><span>The Leadership Layer</span></h3>
+        <p class="sub">The founder's job changed, from running cases to running the business.</p>
+        <p class="d">Built dashboards that give the founder direct visibility into the practice without asking anyone. Rebuilt the team around people aligned with where the practice was headed, and supported the firm's rebrand as it repositioned for growth. The founder's time shifted from day to day case management into growth and B2B partnership work.</p>
+
+        <div class="figure" style="margin-top:24px">
+          <svg class="ill" viewBox="0 0 720 150" fill="none" aria-label="Every account rolls up into one dashboard the founder checks">
+            <g class="draw" style="--len:200" stroke="rgba(217,169,76,.45)" stroke-width="1.2" fill="none">
+              <path d="M75 150 V128 H360 V104"/><path d="M220 150 V128"/>
+              <path d="M365 150 V128"/><path d="M510 150 V128"/><path d="M650 150 V128 H360"/>
+            </g>
+            <g class="fadein" style="transition-delay:.3s">
+              <rect x="230" y="26" width="260" height="60" rx="9" fill="rgba(95,208,138,.1)" stroke="rgba(95,208,138,.45)"/>
+              <text x="360" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2" fill="#5FD08A">FOUNDER'S DASHBOARD</text>
+              <text x="360" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1" fill="rgba(242,238,230,.5)">ALL CASES, ONE GLANCE</text>
+            </g>
+            <g fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)">
+              <rect x="30" y="122" width="90" height="28" rx="5"/><rect x="175" y="122" width="90" height="28" rx="5"/>
+              <rect x="320" y="122" width="90" height="28" rx="5"/><rect x="465" y="122" width="90" height="28" rx="5"/>
+              <rect x="605" y="122" width="90" height="28" rx="5"/>
+            </g>
+          </svg>
+          <div class="cap">One dashboard replaced the founder's daily check-ins</div>
+        </div>
+
+        <ul class="bullets">
+          <li><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c.7-3.6 3.2-5.6 6.5-5.6s5.8 2 6.5 5.6"/><path d="M16 4.3a3.2 3.2 0 0 1 0 6.2"/><path d="M17.5 14.4c2.7.5 4.5 2.3 5 5.6"/></svg><span><b>Team rebuilt around the vision.</b> Let go of misaligned roles, hired case managers who fit the direction of the practice.</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-8h6v8"/></svg><span><b>Rebrand supported.</b> The firm's positioning now matches the practice it has become.</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M7 19V9M12 19V5M17 19v12"/></svg><span><b>Founder redirected to growth.</b> Time freed up now goes into B2B partnerships and expansion, not case triage.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 5. RESULTS ═════════════════════════════ -->
+<section class="results">
+  <div class="wrap">
+    <div class="rule rv"></div>
+    <h2 class="rv">Measurable Success</h2>
+    <p class="h2sub rv">What changed, over <em>[X] weeks.</em></p>
+
+    <div class="rgrid">
+      <div class="r rv">
+        <div class="vis">
+          <svg class="ring" viewBox="0 0 72 72" style="width:72px;height:72px">
+            <circle class="bg" cx="36" cy="36" r="32"/>
+            <circle class="fg" cx="36" cy="36" r="32" style="stroke:#5FD08A"/>
+            <text x="36" y="43" text-anchor="middle">95%</text>
+          </svg>
+        </div>
+        <div class="big grn" data-count="95" data-prefix="-" data-suffix="%">-95%</div>
+        <p>Founder's time in day to day case operations, freed for growth and partnerships.</p>
+      </div>
+      <div class="r rv">
+        <div class="vis">
+          <svg viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="Four systems checked off as interconnected">
+            <g class="fadein">
+              <rect x="10" y="8" width="180" height="18" rx="4" fill="rgba(217,169,76,.08)"/>
+              <circle cx="22" cy="17" r="6" fill="rgba(217,169,76,.28)"/><path d="M19 17l2 2 4-4.5" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <text x="36" y="20" font-family="Inter,sans-serif" font-size="9" fill="rgba(242,238,230,.6)">ClickUp</text>
+            </g>
+            <g class="fadein" style="transition-delay:.1s">
+              <rect x="10" y="30" width="180" height="18" rx="4" fill="rgba(217,169,76,.08)"/>
+              <circle cx="22" cy="39" r="6" fill="rgba(217,169,76,.28)"/><path d="M19 39l2 2 4-4.5" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <text x="36" y="42" font-family="Inter,sans-serif" font-size="9" fill="rgba(242,238,230,.6)">Docketwise</text>
+            </g>
+            <g class="fadein" style="transition-delay:.2s">
+              <rect x="10" y="52" width="180" height="18" rx="4" fill="rgba(217,169,76,.08)"/>
+              <circle cx="22" cy="61" r="6" fill="rgba(217,169,76,.28)"/><path d="M19 61l2 2 4-4.5" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <text x="36" y="64" font-family="Inter,sans-serif" font-size="9" fill="rgba(242,238,230,.6)">GoHighLevel</text>
+            </g>
+            <g class="fadein" style="transition-delay:.3s">
+              <rect x="10" y="74" width="180" height="18" rx="4" fill="rgba(217,169,76,.08)"/>
+              <circle cx="22" cy="83" r="6" fill="rgba(217,169,76,.28)"/><path d="M19 83l2 2 4-4.5" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+              <text x="36" y="86" font-family="Inter,sans-serif" font-size="9" fill="rgba(242,238,230,.6)">Lawmatics</text>
+            </g>
+          </svg>
+        </div>
+        <div class="big" data-count="4" data-suffix="">4</div>
+        <p>Case management, CRM, and intake systems interconnected instead of siloed.</p>
+      </div>
+      <div class="r rv">
+        <div class="vis">
+          <svg viewBox="0 0 200 96" fill="none" style="width:100%;height:100%" aria-label="A month away from the practice">
+            <path class="draw" style="--len:140" d="M100 8 22 30v26c0 26 32 42 78 56 46-14 78-30 78-56V30Z" stroke="#5FD08A" stroke-width="1.6" fill="rgba(95,208,138,.08)"/>
+            <path class="fadein" style="transition-delay:.4s" d="M78 58l16 16 30-34" stroke="#5FD08A" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="big word">One Month</div>
+        <p>The founder took a full month away and the practice ran without him.</p>
+      </div>
+    </div>
+
+    <!-- System stack, the payoff diagram: illustrations.md §4 -->
+    <div class="figure rv" style="margin-top:40px">
+      <svg class="ill" viewBox="0 0 900 260" fill="none" aria-label="One operating system between the founder and every case">
+        <g class="fadein">
+          <rect x="366" y="18" width="168" height="42" rx="8" fill="rgba(95,208,138,.1)" stroke="rgba(95,208,138,.45)"/>
+          <text x="450" y="44" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2" fill="#5FD08A">FOUNDER</text>
+        </g>
+        <g class="draw" style="--len:120" stroke="rgba(95,208,138,.5)" stroke-width="1.4">
+          <path d="M450 60v30"/>
+        </g>
+        <g class="fadein" style="transition-delay:.3s">
+          <rect x="70" y="90" width="760" height="52" rx="10" fill="rgba(217,169,76,.09)" stroke="rgba(217,169,76,.45)"/>
+          <text x="450" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2.2" fill="#D9A94C">THE CASE OPERATING SYSTEM</text>
+          <text x="450" y="130" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.1" fill="rgba(242,238,230,.45)">CLICKUP · DOCKETWISE · GOHIGHLEVEL · LAWMATICS · SOPs · AI AUTOMATION</text>
+        </g>
+        <g class="draw" style="--len:120" stroke="rgba(217,169,76,.4)" stroke-width="1.2">
+          <path d="M150 142v34"/><path d="M270 142v34"/><path d="M390 142v34"/>
+          <path d="M510 142v34"/><path d="M630 142v34"/><path d="M750 142v34"/>
+        </g>
+        <g class="fadein" style="transition-delay:.55s">
+          <g fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)">
+            <rect x="106" y="176" width="88" height="42" rx="6"/><rect x="226" y="176" width="88" height="42" rx="6"/>
+            <rect x="346" y="176" width="88" height="42" rx="6"/><rect x="466" y="176" width="88" height="42" rx="6"/>
+            <rect x="586" y="176" width="88" height="42" rx="6"/><rect x="706" y="176" width="88" height="42" rx="6"/>
+          </g>
+          <text x="450" y="246" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="rgba(242,238,230,.3)">EVERY ACTIVE CASE</text>
+        </g>
+      </svg>
+      <div class="cap">After: one system absorbs what the founder used to absorb</div>
+    </div>
+
+    <!-- ═══ 6. TIMELINE ═════════════════════════ -->
+    <div class="timeline rv">
+      <div class="tl-head">[X] weeks, start to result</div>
+      <div class="tl">
+        <div class="tl-item"><div class="w">Phase 01</div><p>Audited the case and intake flow, and addressed the team's misaligned hires.</p></div>
+        <div class="tl-item"><div class="w">Phase 02</div><p>Built the ClickUp workspace, case handling structure, and standardized intake workflow.</p></div>
+        <div class="tl-item"><div class="w">Phase 03</div><p>SOPs, AI-powered automation, and dashboards launched. The founder shifted into growth and B2B partnerships.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. THE HUMAN OUTCOME ═══════════════════
+     Keeps the eyebrow, NOT the inverted heading. The lead-in is a phrase,
+     not a section name, and the sentence below it is the payload. -->
+<section class="relief">
+  <div class="narrow">
+    <div class="eyebrow rv">The outcome that mattered most</div>
+    <h2 class="rv">The founder became optional to the practice's daily operations.</h2>
+    <p class="lede rv" style="text-align:center">From being the one every case, every hire, and every fire routed through, to a founder who took a month off and came back to a practice that had kept running without him.</p>
+
+    <div class="weekvis rv">
+      <svg viewBox="0 0 620 156" fill="none" style="width:100%;height:auto" aria-label="The founder's week, before and after">
+        <text x="0" y="18" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="rgba(196,100,60,.9)">BEFORE</text>
+        <rect x="0" y="30" width="620" height="26" rx="6" fill="rgba(196,100,60,.16)" stroke="rgba(196,100,60,.3)"/>
+        <text x="310" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="1.4" fill="rgba(242,238,230,.7)">EVERY CASE, EVERY HIRE, EVERY FIRE</text>
+        <text x="0" y="98" font-family="Inter,sans-serif" font-size="9" letter-spacing="2" fill="#5FD08A">AFTER</text>
+        <rect x="0" y="110" width="196" height="26" rx="6" fill="rgba(217,169,76,.16)" stroke="rgba(217,169,76,.32)"/>
+        <text x="98" y="127" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(242,238,230,.6)">LIGHT OVERSIGHT</text>
+        <rect x="208" y="110" width="412" height="26" rx="6" fill="rgba(95,208,138,.16)" stroke="rgba(95,208,138,.4)"/>
+        <text x="414" y="127" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="rgba(242,238,230,.7)">GROWTH, PARTNERSHIPS, A MONTH AWAY</text>
+      </svg>
+    </div>
+
+    <div class="quoteslot rv">
+      <div class="k">Placeholder · founder quote</div>
+      <p>"[One specific line from the founder about the first time the practice ran without him, or about coming back from the month away to find nothing had broken.]"</p>
+      <div class="h">Replace with a real quote, or delete this block entirely.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8. KEY INSIGHT ═════════════════════════ Eyebrow stays: the quote is the payload. -->
+<section class="insight">
+  <div class="narrow">
+    <svg class="quotemark rv" viewBox="0 0 44 32" fill="none" aria-hidden="true">
+      <path d="M0 32V18C0 8 6 1.5 16 0l2 5c-5.5 1.5-8.5 5-8.5 9H17v18Zm27 0V18C27 8 33 1.5 43 0l1 5c-5.5 1.5-8.5 5-8.5 9H44v18Z" fill="#C4643C"/>
+    </svg>
+    <div class="eyebrow rv">Key Insight</div>
+    <blockquote class="rv">If the practice cannot run without the founder in the room, the founder built a job, not a firm.</blockquote>
+    <div class="attr rv">Immigration Law Firm, US · Case Study</div>
+  </div>
+</section>
+
+<!-- ═══ 9. CTA ═════════════════════════════════ Eyebrow stays: the question is the payload. -->
+<section class="final" id="book">
+  <div class="narrow">
+    <div class="eyebrow rv" style="justify-content:center">Work with me</div>
+    <h2 class="rv">Still the one every case runs through?</h2>
+    <p class="lede rv" style="text-align:center">A practice can grow without living in your inbox. If yours still does, that's the system worth fixing, starting with the audit.</p>
+    <a class="btn btn-primary rv" href="#REPLACE-WITH-YOUR-CALENDLY-LINK">Book a discovery call <span class="arw">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div>Fractional COO · Operations &amp; Systems</div>
+  <div><a href="#REPLACE-WITH-YOUR-CALENDLY-LINK">Book a call</a> &nbsp;·&nbsp; <a href="mailto:athmanaajith@gmail.com">Email</a></div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'), bar=document.getElementById('progress');
+  function onScroll(){
+    var y=window.scrollY||document.documentElement.scrollTop;
+    nav.classList.toggle('stuck', y>60);
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(y/h)*100:0)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  var groups=new WeakMap();
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, p=el.parentElement;
+      var i=groups.get(p)||0; groups.set(p,i+1);
+      el.style.transitionDelay=(Math.min(i,6)*70)+'ms';
+      el.classList.add('in');
+      // donut in results card
+      el.querySelectorAll('.fg2').forEach(function(c){
+        setTimeout(function(){ c.style.transition='stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1)'; c.style.strokeDashoffset='21'; },200);
+      });
+      io.unobserve(el);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+
+  var cio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target, target=parseFloat(el.dataset.count);
+      var pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+      var t0=null, dur=1300;
+      function tick(ts){
+        if(!t0) t0=ts;
+        var p=Math.min((ts-t0)/dur,1), eased=1-Math.pow(1-p,3);
+        el.textContent=pre+Math.round(target*eased)+suf;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      cio.unobserve(el);
+    });
+  },{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+})();
+</script>
+</body>
+</html>
