@@ -993,6 +993,25 @@
   },{threshold:.5});
   document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
 })();
+
+(function(){
+  function fitMocks(){
+    document.querySelectorAll('.cu-scroll').forEach(function(wrap){
+      var app=wrap.firstElementChild;
+      if(!app) return;
+      app.style.zoom='';
+      var cs=getComputedStyle(wrap);
+      var avail=wrap.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+      var natW=app.scrollWidth;
+      var scale=Math.min(1,avail/natW);
+      app.style.zoom = scale<1 ? scale : '';
+    });
+  }
+  window.addEventListener('resize',fitMocks);
+  window.addEventListener('load',fitMocks);
+  fitMocks();
+  setTimeout(fitMocks,300);
+})();
 </script>
 </body>
 </html>
