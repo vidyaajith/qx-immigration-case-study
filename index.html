@@ -126,7 +126,6 @@
   .figure .cap::before{content:'';width:16px;height:1px;background:var(--gold)}
 
   /* ── clickup mockup (img-02) ───────────── */
-  .cu-scroll{overflow-x:auto}
   .cu-app{display:flex;border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;background:#fff;width:760px;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif;color:#1a1a1e}
   .cu-rail{width:42px;flex-shrink:0;background:#fafafb;border-right:1px solid #ececef;padding:10px 0;display:flex;flex-direction:column;align-items:center;gap:12px}
   .cu-rail .ws{width:26px;height:26px;border-radius:7px;background:#7b68ee;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;margin-bottom:2px}
@@ -619,8 +618,10 @@
         <p class="sub">New clients stopped waiting on the founder to notice them.</p>
         <p class="d">Built a defined intake workflow from first contact through case assignment, so a new client's path into the practice stopped depending on who happened to see the message first, and the founder stopped being the default point of triage.</p>
 
-        <div class="figure cu-scroll" style="margin-top:24px">
-          <div class="cu-app">
+        <div class="figure" style="margin-top:24px">
+          <svg viewBox="0 0 837 507" style="width:100%;height:auto;display:block" preserveAspectRatio="xMidYMid meet" aria-label="ClickUp intake workflow board">
+          <foreignObject x="0" y="0" width="837" height="507">
+          <div class="cu-app" xmlns="http://www.w3.org/1999/xhtml">
             <div class="cu-rail">
               <div class="ws">QX</div>
               <div class="item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg><span>Home</span></div>
@@ -668,6 +669,8 @@
               </table>
             </div>
           </div>
+          </foreignObject>
+          </svg>
           <div class="cap">The actual ClickUp intake workflow board</div>
         </div>
       </div>
@@ -711,8 +714,10 @@
           <div class="cap">Four systems now run as one, instead of four separate manual habits</div>
         </div>
 
-        <div class="figure cu-scroll" style="margin-top:24px">
-          <div class="gd-app">
+        <div class="figure" style="margin-top:24px">
+          <svg viewBox="0 0 758 463" style="width:100%;height:auto;display:block" preserveAspectRatio="xMidYMid meet" aria-label="Escalation SOP Google Doc">
+          <foreignObject x="0" y="0" width="758" height="463">
+          <div class="gd-app" xmlns="http://www.w3.org/1999/xhtml">
             <div class="gd-outline">
               <div class="h">Document tabs</div>
               <div class="row lvl1">QX Immigration PLLC</div>
@@ -750,11 +755,15 @@
               </div>
             </div>
           </div>
+          </foreignObject>
+          </svg>
           <div class="cap">SOP library, documented and version controlled</div>
         </div>
 
-        <div class="figure cu-scroll" style="margin-top:24px">
-          <div class="cua-app">
+        <div class="figure" style="margin-top:24px">
+          <svg viewBox="0 0 758 444" style="width:100%;height:auto;display:block" preserveAspectRatio="xMidYMid meet" aria-label="ClickUp automation builder">
+          <foreignObject x="0" y="0" width="758" height="444">
+          <div class="cua-app" xmlns="http://www.w3.org/1999/xhtml">
             <div class="cua-head">
               <div><span class="t">Reminder to Pay Union/Peer after case has been sent</span> <span class="in">in QX Clients</span></div>
               <div class="upd">Updated on Jun 23 ···</div>
@@ -787,6 +796,8 @@
               <div><span class="cua-save">Save</span></div>
             </div>
           </div>
+          </foreignObject>
+          </svg>
           <div class="cap">Automation replaces the manual reminder, no one has to remember</div>
         </div>
 
@@ -1039,35 +1050,6 @@
     });
   },{threshold:.5});
   document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
-})();
-
-(function(){
-  function fitMocks(){
-    document.querySelectorAll('.cu-scroll').forEach(function(wrap){
-      var app=wrap.firstElementChild;
-      if(!app) return;
-      app.style.transform='';
-      app.style.zoom='';
-      var cs=getComputedStyle(wrap);
-      var padL=parseFloat(cs.paddingLeft)||0, padR=parseFloat(cs.paddingRight)||0;
-      var padT=parseFloat(cs.paddingTop)||0, padB=parseFloat(cs.paddingBottom)||0;
-      var bT=parseFloat(cs.borderTopWidth)||0, bB=parseFloat(cs.borderBottomWidth)||0;
-      var avail=wrap.clientWidth-padL-padR;
-      var natW=app.scrollWidth, natH=app.scrollHeight;
-      var scale=Math.min(1,avail/natW);
-      if(scale<1){
-        app.style.transformOrigin='top left';
-        app.style.transform='scale('+scale+')';
-        wrap.style.height=(natH*scale+padT+padB+bT+bB)+'px';
-      } else {
-        wrap.style.height='';
-      }
-    });
-  }
-  window.addEventListener('resize',fitMocks);
-  window.addEventListener('load',fitMocks);
-  fitMocks();
-  setTimeout(fitMocks,300);
 })();
 </script>
 </body>
