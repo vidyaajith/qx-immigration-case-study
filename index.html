@@ -216,6 +216,45 @@
   .cua-foot .steps span{border:1px solid #e2e2e6;border-radius:4px;padding:3px 7px;margin-right:4px;color:#5c5c64}
   .cua-save{background:#7b68ee;color:#fff;font-weight:600;border-radius:5px;padding:6px 14px;font-size:10.5px}
 
+  /* ── gmail mockup ───────────────────────── */
+  .gm-app{border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;background:#fff;width:100%;max-width:760px;aspect-ratio:16/9;font-family:Arial,sans-serif;color:#202124;display:flex;flex-direction:column}
+  .gm-top{display:flex;align-items:center;gap:14px;padding:8px 16px;border-bottom:1px solid #ececec;font-size:12px;flex-shrink:0}
+  .gm-top .gm-menu{color:#5f6368;font-size:15px}
+  .gm-top .gm-logo{font-weight:600;color:#5f6368;letter-spacing:.2px;font-size:15px}
+  .gm-top .gm-logo b{color:#ea4335}
+  .gm-top .gm-search{flex:1;background:#eaf1fb;border-radius:20px;padding:7px 14px;color:#5f6368;font-size:11px}
+  .gm-top .gm-avatar{width:22px;height:22px;border-radius:50%;background:#1a73e8;color:#fff;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:600}
+  .gm-body{display:flex;flex:1;min-height:0}
+  .gm-side{width:130px;flex-shrink:0;padding:12px 8px;border-right:1px solid #f1f1f1}
+  .gm-compose{background:#c2e7ff;color:#001d35;font-weight:600;font-size:11px;border-radius:16px;padding:8px 14px;margin-bottom:10px;display:inline-block}
+  .gm-nav{font-size:11px;color:#3c4043;padding:6px 10px;border-radius:0 16px 16px 0;display:flex;justify-content:space-between}
+  .gm-nav.active{background:#d3e3fd;color:#001d35;font-weight:600}
+  .gm-nav .n{color:#5f6368;font-size:10px}
+  .gm-list{flex:1;min-width:0;overflow:hidden}
+  .gm-row{display:flex;align-items:center;gap:10px;padding:7px 14px;border-bottom:1px solid #f1f1f1;font-size:11px;color:#5f6368}
+  .gm-row .gm-star{color:#c4c7c5;font-size:12px}
+  .gm-row .gm-from{width:110px;flex-shrink:0;color:#202124;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .gm-row.unread .gm-from{font-weight:700}
+  .gm-row .gm-subj{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .gm-row .gm-subj b{color:#202124;font-weight:600}
+  .gm-row .gm-time{color:#5f6368;font-size:10px;flex-shrink:0}
+
+  /* ── slack mockup ───────────────────────── */
+  .sl-app{border:1px solid #35202c;border-radius:8px;overflow:hidden;background:#1a1721;width:100%;max-width:760px;aspect-ratio:16/9;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif;color:#d1d2d3;display:flex}
+  .sl-side{width:150px;flex-shrink:0;background:#3a1930;padding:12px 10px;overflow:hidden}
+  .sl-ws{color:#fff;font-weight:700;font-size:12px;margin-bottom:12px}
+  .sl-sec{color:#c9a3c1;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;margin:10px 0 4px}
+  .sl-ch{color:#c9a3c1;font-size:11px;padding:3px 0}
+  .sl-ch.active{background:#1164a3;color:#fff;font-weight:600;border-radius:5px;padding:3px 6px;margin:0 -6px}
+  .sl-main{flex:1;min-width:0;display:flex;flex-direction:column}
+  .sl-head{padding:9px 14px;border-bottom:1px solid #2c2333;font-weight:700;font-size:12px;color:#fff;flex-shrink:0}
+  .sl-msgs{padding:10px 14px;overflow:hidden;flex:1;min-height:0}
+  .sl-msg{display:flex;gap:8px;margin-bottom:10px}
+  .sl-avatar{width:24px;height:24px;border-radius:6px;background:#611f69;color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .sl-name{color:#fff;font-weight:700;font-size:11px}
+  .sl-time{color:#9a97a3;font-size:9.5px;margin-left:6px}
+  .sl-text{color:#d1d2d3;font-size:11px;line-height:1.4;margin-top:1px}
+
   .draw path,.draw line,.draw circle,.draw rect,.draw polyline{
     stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);
     transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
@@ -455,58 +494,53 @@
     <p class="lede rv">Every case moved through him. Every hire, every fire, every judgment call. There was no standard way to handle a case, no fixed path for a new client to enter the practice, and no way to see what was happening across the team without asking. The practice could not run for a week without him in it.</p>
 
     <div class="figure rv" style="margin-top:26px">
-      <svg class="ill" viewBox="0 0 720 400" fill="none" aria-label="Case tracking scattered across an email inbox, a spreadsheet, and sticky notes, none of them connected">
+      <div class="gm-app">
+        <div class="gm-top">
+          <span class="gm-menu">☰</span>
+          <span class="gm-logo"><b>G</b>mail</span>
+          <span class="gm-search">Search mail</span>
+          <span class="gm-avatar">Q</span>
+        </div>
+        <div class="gm-body">
+          <div class="gm-side">
+            <span class="gm-compose">Compose</span>
+            <div class="gm-nav active">Inbox <span class="n">142</span></div>
+            <div class="gm-nav">Starred</div>
+            <div class="gm-nav">Sent</div>
+            <div class="gm-nav">Drafts <span class="n">6</span></div>
+          </div>
+          <div class="gm-list">
+            <div class="gm-row unread"><span class="gm-star">☆</span><span class="gm-from">New Inquiry</span><span class="gm-subj"><b>O-1 case intake</b> — Hi, following up on my petition timeline...</span><span class="gm-time">9:14 AM</span></div>
+            <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">Client — EB-1</span><span class="gm-subj"><b>Re: documents</b> — attached the requested evidence letters</span><span class="gm-time">Yesterday</span></div>
+            <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">USCIS Notice</span><span class="gm-subj"><b>Case status changed</b> — your case status has been updated to...</span><span class="gm-time">Aug 25</span></div>
+            <div class="gm-row unread"><span class="gm-star">☆</span><span class="gm-from">Team</span><span class="gm-subj"><b>Re: who's handling this?</b> — can someone confirm assignment</span><span class="gm-time">Aug 24</span></div>
+            <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">Client — N-400</span><span class="gm-subj"><b>Following up</b> — just checking in on where things stand</span><span class="gm-time">Aug 22</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap">One inbox, no owner, no way to tell what's been handled</div>
+    </div>
 
-        <g class="fadein" transform="rotate(-5 190 150)">
-          <rect x="50" y="60" width="270" height="180" rx="8" fill="#141418" stroke="rgba(196,100,60,.4)" stroke-width="1.4"/>
-          <rect x="50" y="60" width="270" height="30" rx="8" fill="rgba(196,100,60,.12)"/>
-          <circle cx="66" cy="75" r="4" fill="rgba(196,100,60,.5)"/><circle cx="80" cy="75" r="4" fill="rgba(255,255,255,.14)"/><circle cx="94" cy="75" r="4" fill="rgba(255,255,255,.14)"/>
-          <text x="106" y="79" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.4" fill="rgba(242,238,230,.55)">INBOX</text>
-          <g stroke="rgba(255,255,255,.1)"><path d="M62 108h246"/><path d="M62 138h246"/><path d="M62 168h246"/><path d="M62 198h246"/></g>
-          <rect x="62" y="97" width="180" height="8" rx="4" fill="rgba(242,238,230,.3)"/>
-          <rect x="62" y="127" width="150" height="8" rx="4" fill="rgba(242,238,230,.2)"/>
-          <rect x="62" y="157" width="200" height="8" rx="4" fill="#C4643C"/>
-          <rect x="62" y="187" width="120" height="8" rx="4" fill="rgba(242,238,230,.2)"/>
-        </g>
-
-        <g class="fadein" style="transition-delay:.15s" transform="rotate(4 470 230)">
-          <rect x="330" y="150" width="290" height="190" rx="8" fill="#141418" stroke="rgba(217,169,76,.4)" stroke-width="1.4"/>
-          <rect x="330" y="150" width="290" height="26" rx="8" fill="rgba(217,169,76,.12)"/>
-          <text x="344" y="167" font-family="Inter,sans-serif" font-size="9" letter-spacing="1.4" fill="rgba(242,238,230,.55)">CASE TRACKER.XLSX</text>
-          <g stroke="rgba(255,255,255,.12)">
-            <path d="M330 202h290"/><path d="M330 234h290"/><path d="M330 266h290"/><path d="M330 298h290"/>
-            <path d="M410 176v164"/><path d="M480 176v164"/><path d="M550 176v164"/>
-          </g>
-          <rect x="342" y="188" width="52" height="8" rx="3" fill="rgba(242,238,230,.28)"/>
-          <rect x="422" y="188" width="42" height="8" rx="3" fill="rgba(242,238,230,.28)"/>
-          <rect x="492" y="188" width="42" height="8" rx="3" fill="rgba(242,238,230,.28)"/>
-          <rect x="342" y="220" width="52" height="8" rx="3" fill="rgba(242,238,230,.16)"/>
-          <rect x="422" y="220" width="42" height="8" rx="3" fill="rgba(242,238,230,.16)"/>
-          <rect x="342" y="252" width="52" height="8" rx="3" fill="rgba(242,238,230,.16)"/>
-          <rect x="492" y="252" width="42" height="8" rx="3" fill="#D9A94C"/>
-        </g>
-
-        <g class="fadein" style="transition-delay:.3s" transform="rotate(-9 165 300)">
-          <path d="M110 250h110v96l-16 16H110Z" fill="#1c1712" stroke="rgba(196,100,60,.5)" stroke-width="1.4"/>
-          <path d="M204 346v-16h16Z" fill="rgba(196,100,60,.3)"/>
-          <g stroke="rgba(242,238,230,.4)" stroke-width="1.6" stroke-linecap="round">
-            <path d="M126 272h70"/><path d="M126 288h50"/><path d="M126 304h60"/><path d="M126 320h34"/>
-          </g>
-        </g>
-
-        <g class="fadein" style="transition-delay:.45s">
-          <circle cx="520" cy="330" r="24" fill="#1c1712" stroke="rgba(196,100,60,.5)" stroke-width="1.4"/>
-          <text x="520" y="337" text-anchor="middle" font-family="var(--serif),serif" font-size="22" fill="#C4643C">?</text>
-        </g>
-
-        <g class="draw" style="--len:40" stroke="rgba(196,100,60,.55)" stroke-width="1.4" stroke-dasharray="3 5" stroke-linecap="round">
-          <path d="M300 100 L340 90"/>
-        </g>
-        <g class="draw" style="--len:40" stroke="rgba(196,100,60,.55)" stroke-width="1.4" stroke-dasharray="3 5" stroke-linecap="round">
-          <path d="M220 60 L245 30"/>
-        </g>
-      </svg>
-      <div class="cap">Case tracking split across email, spreadsheets, and memory, with nothing connected</div>
+    <div class="figure rv" style="margin-top:24px">
+      <div class="sl-app">
+        <div class="sl-side">
+          <div class="sl-ws">Immigration Practice ▾</div>
+          <div class="sl-sec">Channels</div>
+          <div class="sl-ch">eb1-case-alpha</div>
+          <div class="sl-ch">o1-case-beta</div>
+          <div class="sl-ch active"># operations</div>
+          <div class="sl-ch">leads</div>
+        </div>
+        <div class="sl-main">
+          <div class="sl-head"># operations</div>
+          <div class="sl-msgs">
+            <div class="sl-msg"><span class="sl-avatar">A</span><div><span class="sl-name">Alex</span><span class="sl-time">10:12 AM</span><div class="sl-text">@Jamie where's the intake form for this client? Can't find it anywhere</div></div></div>
+            <div class="sl-msg"><span class="sl-avatar">J</span><div><span class="sl-name">Jamie</span><span class="sl-time">10:15 AM</span><div class="sl-text">Check the shared drive, should be under Intake &gt; Forms</div></div></div>
+            <div class="sl-msg"><span class="sl-avatar">A</span><div><span class="sl-name">Alex</span><span class="sl-time">10:16 AM</span><div class="sl-text">Not there either, can you resend when you get a sec?</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap">And answers that only ever lived in a Slack thread</div>
     </div>
   </div>
 </section>
