@@ -255,6 +255,13 @@
   .sl-time{color:#9a97a3;font-size:9.5px;margin-left:6px}
   .sl-text{color:#d1d2d3;font-size:11px;line-height:1.4;margin-top:1px}
 
+  /* ── floating mockup stage ──────────────── */
+  .mock-stage{position:relative;perspective:1800px;height:0;padding-bottom:52%;margin-top:6px}
+  .mock-card{position:absolute;aspect-ratio:16/9;box-shadow:0 30px 60px -10px rgba(0,0,0,.6);border-radius:8px;max-width:none!important}
+  .mock-card.gm-app,.mock-card.sl-app{width:60%}
+  .mock-a{top:2%;left:0;transform:rotateX(48deg) rotateZ(-6deg);transform-origin:top left;z-index:2}
+  .mock-b{bottom:0;right:0;transform:rotateX(48deg) rotateZ(5deg);transform-origin:top left;z-index:1}
+
   .draw path,.draw line,.draw circle,.draw rect,.draw polyline{
     stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);
     transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
@@ -494,53 +501,51 @@
     <p class="lede rv">Every case moved through him. Every hire, every fire, every judgment call. There was no standard way to handle a case, no fixed path for a new client to enter the practice, and no way to see what was happening across the team without asking. The practice could not run for a week without him in it.</p>
 
     <div class="figure rv" style="margin-top:26px">
-      <div class="gm-app">
-        <div class="gm-top">
-          <span class="gm-menu">☰</span>
-          <span class="gm-logo"><b>G</b>mail</span>
-          <span class="gm-search">Search mail</span>
-          <span class="gm-avatar">Q</span>
-        </div>
-        <div class="gm-body">
-          <div class="gm-side">
-            <span class="gm-compose">Compose</span>
-            <div class="gm-nav active">Inbox <span class="n">142</span></div>
-            <div class="gm-nav">Starred</div>
-            <div class="gm-nav">Sent</div>
-            <div class="gm-nav">Drafts <span class="n">6</span></div>
+      <div class="mock-stage">
+        <div class="gm-app mock-card mock-a">
+          <div class="gm-top">
+            <span class="gm-menu">☰</span>
+            <span class="gm-logo"><b>G</b>mail</span>
+            <span class="gm-search">Search mail</span>
+            <span class="gm-avatar">Q</span>
           </div>
-          <div class="gm-list">
-            <div class="gm-row unread"><span class="gm-star">☆</span><span class="gm-from">New Inquiry</span><span class="gm-subj"><b>O-1 case intake</b> — Hi, following up on my petition timeline...</span><span class="gm-time">9:14 AM</span></div>
-            <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">Client — EB-1</span><span class="gm-subj"><b>Re: documents</b> — attached the requested evidence letters</span><span class="gm-time">Yesterday</span></div>
-            <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">USCIS Notice</span><span class="gm-subj"><b>Case status changed</b> — your case status has been updated to...</span><span class="gm-time">Aug 25</span></div>
-            <div class="gm-row unread"><span class="gm-star">☆</span><span class="gm-from">Team</span><span class="gm-subj"><b>Re: who's handling this?</b> — can someone confirm assignment</span><span class="gm-time">Aug 24</span></div>
-            <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">Client — N-400</span><span class="gm-subj"><b>Following up</b> — just checking in on where things stand</span><span class="gm-time">Aug 22</span></div>
+          <div class="gm-body">
+            <div class="gm-side">
+              <span class="gm-compose">Compose</span>
+              <div class="gm-nav active">Inbox <span class="n">142</span></div>
+              <div class="gm-nav">Starred</div>
+              <div class="gm-nav">Sent</div>
+              <div class="gm-nav">Drafts <span class="n">6</span></div>
+            </div>
+            <div class="gm-list">
+              <div class="gm-row unread"><span class="gm-star">☆</span><span class="gm-from">New Inquiry</span><span class="gm-subj"><b>O-1 case intake</b> — Hi, following up on my petition timeline...</span><span class="gm-time">9:14 AM</span></div>
+              <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">Client — EB-1</span><span class="gm-subj"><b>Re: documents</b> — attached the requested evidence letters</span><span class="gm-time">Yesterday</span></div>
+              <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">USCIS Notice</span><span class="gm-subj"><b>Case status changed</b> — your case status has been updated to...</span><span class="gm-time">Aug 25</span></div>
+              <div class="gm-row unread"><span class="gm-star">☆</span><span class="gm-from">Team</span><span class="gm-subj"><b>Re: who's handling this?</b> — can someone confirm assignment</span><span class="gm-time">Aug 24</span></div>
+              <div class="gm-row"><span class="gm-star">☆</span><span class="gm-from">Client — N-400</span><span class="gm-subj"><b>Following up</b> — just checking in on where things stand</span><span class="gm-time">Aug 22</span></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="cap">One inbox, no owner, no way to tell what's been handled</div>
-    </div>
-
-    <div class="figure rv" style="margin-top:24px">
-      <div class="sl-app">
-        <div class="sl-side">
-          <div class="sl-ws">Immigration Practice ▾</div>
-          <div class="sl-sec">Channels</div>
-          <div class="sl-ch">eb1-case-alpha</div>
-          <div class="sl-ch">o1-case-beta</div>
-          <div class="sl-ch active"># operations</div>
-          <div class="sl-ch">leads</div>
-        </div>
-        <div class="sl-main">
-          <div class="sl-head"># operations</div>
-          <div class="sl-msgs">
-            <div class="sl-msg"><span class="sl-avatar">A</span><div><span class="sl-name">Alex</span><span class="sl-time">10:12 AM</span><div class="sl-text">@Jamie where's the intake form for this client? Can't find it anywhere</div></div></div>
-            <div class="sl-msg"><span class="sl-avatar">J</span><div><span class="sl-name">Jamie</span><span class="sl-time">10:15 AM</span><div class="sl-text">Check the shared drive, should be under Intake &gt; Forms</div></div></div>
-            <div class="sl-msg"><span class="sl-avatar">A</span><div><span class="sl-name">Alex</span><span class="sl-time">10:16 AM</span><div class="sl-text">Not there either, can you resend when you get a sec?</div></div></div>
+        <div class="sl-app mock-card mock-b">
+          <div class="sl-side">
+            <div class="sl-ws">Immigration Practice ▾</div>
+            <div class="sl-sec">Channels</div>
+            <div class="sl-ch">eb1-case-alpha</div>
+            <div class="sl-ch">o1-case-beta</div>
+            <div class="sl-ch active"># operations</div>
+            <div class="sl-ch">leads</div>
+          </div>
+          <div class="sl-main">
+            <div class="sl-head"># operations</div>
+            <div class="sl-msgs">
+              <div class="sl-msg"><span class="sl-avatar">A</span><div><span class="sl-name">Alex</span><span class="sl-time">10:12 AM</span><div class="sl-text">@Jamie where's the intake form for this client? Can't find it anywhere</div></div></div>
+              <div class="sl-msg"><span class="sl-avatar">J</span><div><span class="sl-name">Jamie</span><span class="sl-time">10:15 AM</span><div class="sl-text">Check the shared drive, should be under Intake &gt; Forms</div></div></div>
+              <div class="sl-msg"><span class="sl-avatar">A</span><div><span class="sl-name">Alex</span><span class="sl-time">10:16 AM</span><div class="sl-text">Not there either, can you resend when you get a sec?</div></div></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="cap">And answers that only ever lived in a Slack thread</div>
+      <div class="cap">Email and Slack, scattered, with nothing tying them to the case</div>
     </div>
   </div>
 </section>
