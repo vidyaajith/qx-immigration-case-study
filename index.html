@@ -126,7 +126,7 @@
   .figure .cap::before{content:'';width:16px;height:1px;background:var(--gold)}
 
   /* ── clickup mockup (img-02) ───────────── */
-  .cu-app{display:flex;border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;background:#fff;width:100%;max-width:760px;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif;color:#1a1a1e}
+  .cu-app{display:flex;border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;background:#fff;width:100%;max-width:760px;aspect-ratio:16/9;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif;color:#1a1a1e}
   .cu-rail{width:42px;flex-shrink:0;background:#fafafb;border-right:1px solid #ececef;padding:10px 0;display:flex;flex-direction:column;align-items:center;gap:12px}
   .cu-rail .ws{width:26px;height:26px;border-radius:7px;background:#7b68ee;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;margin-bottom:2px}
   .cu-rail .item{display:flex;flex-direction:column;align-items:center;gap:2px}
@@ -176,32 +176,32 @@
   .cu-tag.ops{background:#fbecd2;color:#b3720a}
 
   /* ── google doc mockup (sop) ────────────── */
-  .gd-app{display:flex;border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;background:#fff;width:100%;max-width:760px;font-family:Arial,sans-serif;color:#1a1a1e}
+  .gd-app{display:flex;border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;background:#fff;width:100%;max-width:760px;aspect-ratio:16/9;font-family:Arial,sans-serif;color:#1a1a1e}
   .gd-outline{width:180px;flex-shrink:0;background:#fafafb;border-right:1px solid #ececef;padding:12px 10px;font-size:10.5px;color:#5c5c64}
   .gd-outline .h{font-size:9.5px;letter-spacing:.04em;color:#8b8b93;margin-bottom:8px;font-weight:600}
   .gd-outline .row{padding:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .gd-outline .row.lvl1{color:#1a1a1e;font-weight:700}
   .gd-outline .row.lvl2{padding-left:10px}
   .gd-outline .row.lvl3{padding-left:20px;color:#8b8b93}
-  .gd-doc{flex:1;min-width:0;padding:20px 24px}
+  .gd-doc{flex:1;min-width:0;padding:14px 24px;overflow:hidden}
   .gd-toolbar{display:flex;align-items:center;gap:10px;padding:8px 16px;border-bottom:1px solid #ececef;font-size:10.5px;color:#5c5c64}
   .gd-toolbar .sel{border:1px solid #e2e2e6;border-radius:4px;padding:4px 8px}
   .gd-toolbar b{background:#e2e2e6;border-radius:3px;padding:3px 6px}
   .gd-title{background:#fdf3c9;display:inline-block;padding:2px 4px;font-weight:700;font-size:18px;line-height:1.3}
   .gd-meta{font-size:11px;line-height:1.7;margin:14px 0}
-  .gd-hr{border:none;border-top:1px solid #e2e2e6;margin:14px 0}
-  .gd-h1{font-size:15px;font-weight:700;margin:14px 0 8px}
+  .gd-hr{border:none;border-top:1px solid #e2e2e6;margin:10px 0}
+  .gd-h1{font-size:15px;font-weight:700;margin:10px 0 6px}
   .gd-p{font-size:11px;line-height:1.6;color:#333}
   .gd-ul{font-size:11px;line-height:1.7;margin:6px 0;padding-left:18px;color:#333}
 
   /* ── clickup automation mockup ─────────── */
-  .cua-app{border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;background:#fff;width:100%;max-width:760px;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif;color:#1a1a1e}
+  .cua-app{border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;background:#fff;width:100%;max-width:760px;aspect-ratio:16/9;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif;color:#1a1a1e}
   .cua-head{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #ececef;font-size:12px}
   .cua-head .t{font-weight:700}
   .cua-head .in{color:#8b8b93;font-weight:400}
   .cua-head .upd{color:#8b8b93;font-size:10.5px}
-  .cua-body{display:flex;padding:18px 20px;gap:14px}
-  .cua-card{flex:1;min-width:0;border:1px solid #ececef;border-radius:8px;padding:12px}
+  .cua-body{display:flex;padding:10px 20px;gap:14px;overflow:hidden}
+  .cua-card{flex:1;min-width:0;border:1px solid #ececef;border-radius:8px;padding:10px}
   .cua-card .hd{display:flex;align-items:center;justify-content:space-between;font-size:12.5px;font-weight:700;margin-bottom:12px}
   .cua-card .hd .badge{width:20px;height:20px;border-radius:5px;background:#7b68ee;display:inline-block;margin-right:8px;vertical-align:middle}
   .cua-card .sel{border:1px solid #e2e2e6;border-radius:6px;padding:7px 9px;font-size:10.5px;color:#333;margin-bottom:9px}
@@ -660,10 +660,6 @@
                 <tr><td class="name"><span class="cu-circle"></span>Assign Paralegal to Case</td><td><span class="cu-person"></span></td><td class="cu-due">11/18/25</td><td><span class="cu-flag">⚑</span></td><td><span class="cu-status">TO DO</span></td><td><span class="cu-dep">Introduce… +1</span></td><td><span class="cu-tag cos">COS ⌄</span></td></tr>
                 <tr><td class="name"><span class="cu-circle"></span>Introduce Paralegal to Client <span class="cu-warn">⚠</span></td><td><span class="cu-person"></span></td><td class="cu-due">11/18/25</td><td><span class="cu-flag">⚑</span></td><td><span class="cu-status">TO DO</span></td><td><span class="cu-dep">Assign Para… +1</span></td><td><span class="cu-tag intaker">INTAKER ⌄</span></td></tr>
                 <tr><td class="name"><span class="cu-circle"></span>Set up Clickup</td><td><span class="cu-person"></span></td><td class="cu-due">11/18/25</td><td><span class="cu-flag">⚑</span></td><td><span class="cu-status">TO DO</span></td><td>–</td><td><span class="cu-tag ops">OPS MGR ⌄</span></td></tr>
-                <tr><td class="name"><span class="cu-circle"></span>Create Slack Channel</td><td><span class="cu-person"></span></td><td class="cu-due">11/18/25</td><td><span class="cu-flag">⚑</span></td><td><span class="cu-status">TO DO</span></td><td><span class="cu-dep">2nd Invoice</span></td><td><span class="cu-tag paralegal">PARALEGAL ⌄</span></td></tr>
-                <tr><td class="name"><span class="cu-circle"></span>Give Introductory call <span class="cu-warn">⚠</span></td><td><span class="cu-person"></span></td><td class="cu-due">11/18/25</td><td><span class="cu-flag">⚑</span></td><td><span class="cu-status">TO DO</span></td><td><span class="cu-dep">Assign Para…</span></td><td><span class="cu-tag paralegal">PARALEGAL ⌄</span></td></tr>
-                <tr><td class="name"><span class="cu-circle"></span>Transfer info to Paralegal</td><td><span class="cu-person"></span></td><td class="cu-due">11/18/25</td><td><span class="cu-flag">⚑</span></td><td><span class="cu-status">TO DO</span></td><td>–</td><td><span class="cu-tag intaker">INTAKER ⌄</span></td></tr>
-                <tr><td class="name"><span class="cu-circle"></span>Create contact in Docketwise <span class="cu-warn">⚠</span></td><td><span class="cu-person"></span></td><td class="cu-due">11/18/25</td><td><span class="cu-flag">⚑</span></td><td><span class="cu-status">TO DO</span></td><td><span class="cu-dep">Introduce… +1</span></td><td><span class="cu-tag paralegal">PARALEGAL ⌄</span></td></tr>
               </table>
             </div>
           </div>
@@ -727,7 +723,7 @@
             </div>
             <div class="gd-doc">
               <div class="gd-toolbar"><span class="sel">Heading 1</span><span class="sel">Arial</span><b>B</b><i>I</i><span>U</span></div>
-              <div style="padding-top:16px">
+              <div style="padding-top:8px">
                 <div class="gd-title">QX Immigration PLLC</div><br>
                 <div class="gd-title">Escalation Plan for I-797 Notice</div>
                 <div class="gd-meta">
