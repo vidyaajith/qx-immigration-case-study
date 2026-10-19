@@ -219,6 +219,30 @@
   .cua-foot .steps span{border:1px solid #e2e2e6;border-radius:4px;padding:3px 7px;margin-right:4px;color:#5c5c64}
   .cua-save{background:#7b68ee;color:#fff;font-weight:600;border-radius:5px;padding:6px 14px;font-size:10.5px}
 
+  /* ── case room dashboard mockup ─────────── */
+  .cr-app{width:100%;max-width:760px;margin:0 auto;aspect-ratio:16/9;background:#f4f2ed;border:1px solid #e2e2e6;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif;color:#1a1a1a}
+  .cr-head{display:flex;justify-content:space-between;align-items:center;padding:9px 16px;flex-shrink:0}
+  .cr-logo{font-size:15px;letter-spacing:.14em;display:flex;align-items:center;gap:8px}
+  .cr-logo i{font-style:normal;width:22px;height:22px;border:1.5px solid #1a1a1a;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;letter-spacing:0}
+  .cr-ref{font-size:7.5px;letter-spacing:.12em;color:#5c5c64;text-align:right;display:flex;flex-direction:column}
+  .cr-ref b{font-size:10px;letter-spacing:0;color:#1a1a1a;font-weight:500}
+  .cr-bar{display:flex;height:4px;flex-shrink:0}.cr-bar i{flex:1}
+  .cr-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px 8px;flex:1;min-height:0}
+  .cr-card{background:#fafafa;border:1px solid #e6e3dc;padding:0 12px 10px;overflow:hidden}
+  .cr-tag{display:inline-block;color:#fff;font-size:7.5px;font-weight:700;letter-spacing:.12em;padding:4px 10px;margin:0 0 8px -12px}
+  .cr-title{font-size:12px;letter-spacing:.1em;margin-bottom:8px}
+  .cr-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:6.5px;letter-spacing:.08em;color:#5c5c64;margin-bottom:9px;padding-bottom:8px;border-bottom:1px solid #e6e3dc}
+  .cr-kpis b{display:block;font-size:19px;letter-spacing:-.02em;color:#1a1a1a;margin-bottom:1px}
+  .cr-funnel{display:flex;flex-direction:column;align-items:center;gap:2px}
+  .cr-band{color:#fff;font-size:7.5px;text-align:center;padding:4px 2px;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;overflow:hidden}
+  .cr-band b{font-size:9px;margin-left:3px}
+  .cr-rows{display:flex;flex-direction:column;gap:6px}
+  .cr-row{display:grid;grid-template-columns:34px 1fr 18px;gap:8px;align-items:center;font-size:8.5px;color:#3c3c44}
+  .cr-row i{height:9px;background:#e9e6df;display:block}.cr-row u{display:block;height:100%}
+  .cr-row b{text-align:right;color:#1a1a1a}
+  .cr-attn{margin:0 16px 12px;border:1px solid #e6e3dc;border-left:3px solid #2e6b4f;background:#fafafa;padding:7px 10px;font-size:9px;color:#2e6b4f;flex-shrink:0}
+  .cr-attn b{color:#1a1a1a;margin-right:8px}
+
   .draw path,.draw line,.draw circle,.draw rect,.draw polyline{
     stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);
     transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
@@ -767,23 +791,25 @@
         <p class="d">Built dashboards that give the founder direct visibility into the practice without asking anyone. Rebuilt the team around people aligned with where the practice was headed, and supported the firm's rebrand as it repositioned for growth. The founder's time shifted from day to day case management into growth and B2B partnership work.</p>
 
         <div class="figure" style="margin-top:24px">
-          <svg class="ill" viewBox="0 0 720 150" fill="none" aria-label="Every account rolls up into one dashboard the founder checks">
-            <g class="draw" style="--len:650" stroke="rgba(217,169,76,.45)" stroke-width="1.2" fill="none">
-              <path d="M75 122V104H650V122"/>
-              <path d="M220 122V104M365 122V104M510 122V104"/>
-              <path d="M360 104V86"/>
-            </g>
-            <g class="fadein" style="transition-delay:.3s">
-              <rect x="230" y="26" width="260" height="60" rx="9" fill="rgba(95,208,138,.1)" stroke="rgba(95,208,138,.45)"/>
-              <text x="360" y="52" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" letter-spacing="2" fill="#5FD08A">FOUNDER'S DASHBOARD</text>
-              <text x="360" y="70" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" letter-spacing="1" fill="rgba(242,238,230,.85)">ALL CASES, ONE GLANCE</text>
-            </g>
-            <g fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.14)">
-              <rect x="30" y="122" width="90" height="28" rx="5"/><rect x="175" y="122" width="90" height="28" rx="5"/>
-              <rect x="320" y="122" width="90" height="28" rx="5"/><rect x="465" y="122" width="90" height="28" rx="5"/>
-              <rect x="605" y="122" width="90" height="28" rx="5"/>
-            </g>
-          </svg>
+          <div class="cr-app">
+            <div class="cr-head"><span class="cr-logo"><i>Q</i> CASE ROOM</span><span class="cr-ref">LAST REFRESHED<b>Today, 9:30 AM</b></span></div>
+            <div class="cr-bar"><i style="background:#2c7be5"></i><i style="background:#1fb27c"></i><i style="background:#4b3aa8"></i><i style="background:#e8693a"></i></div>
+            <div class="cr-body">
+              <div class="cr-card">
+                <div class="cr-tag" style="background:#2c7be5">SALES — GOHIGHLEVEL</div>
+                <div class="cr-title">CLIENT INTAKE &amp; SALES</div>
+                <div class="cr-kpis"><div><b>64</b>OPEN OPPS</div><div><b>3</b>DAYS SINCE CLOSE</div><div><b>8%</b>NO OWNER</div><div><b>5%</b>NO SOURCE</div></div>
+                <div class="cr-funnel"><div class="cr-band" style="width:100%;background:#2c7be5">New lead <b>14</b></div><div class="cr-band" style="width:86%;background:#e8693a">Contact attempted <b>31</b></div><div class="cr-band" style="width:72%;background:#1fb27c">Contacted <b>9</b></div><div class="cr-band" style="width:58%;background:#e9a406">Call scheduled <b>7</b></div><div class="cr-band" style="width:44%;background:#d4618f">Offer sent <b>4</b></div><div class="cr-band" style="width:30%;background:#0a8a0a">Closed <b>3</b></div></div>
+              </div>
+              <div class="cr-card">
+                <div class="cr-tag" style="background:#1fb27c">CASE OPS — CLICKUP</div>
+                <div class="cr-title">ACTIVE MATTERS</div>
+                <div class="cr-kpis"><div><b>51</b>OPEN CASES</div><div><b>11</b>DUE THIS WEEK</div><div><b>4</b>OVERDUE</div><div><b>9</b>WAITING ON CLIENT</div></div>
+                <div class="cr-rows"><div class="cr-row"><span>O-1</span><i><u style="width:100%;background:#2c7be5"></u></i><b>18</b></div><div class="cr-row"><span>EB-1</span><i><u style="width:67%;background:#1fb27c"></u></i><b>12</b></div><div class="cr-row"><span>EB-2</span><i><u style="width:50%;background:#4b3aa8"></u></i><b>9</b></div><div class="cr-row"><span>N-400</span><i><u style="width:39%;background:#e8693a"></u></i><b>7</b></div><div class="cr-row"><span>Other</span><i><u style="width:28%;background:#9a98a0"></u></i><b>5</b></div></div>
+              </div>
+            </div>
+            <div class="cr-attn"><b>Needs attention</b> 2 matters past threshold today.</div>
+          </div>
           <div class="cap">One dashboard replaced the founder's daily check-ins</div>
         </div>
 
