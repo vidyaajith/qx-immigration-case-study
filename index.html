@@ -155,7 +155,10 @@
   .cu-tright{display:flex;align-items:center;gap:10px}
   .cu-tright svg{width:15px;height:15px;color:#a3a3ab}
   .cu-task-btn{font-size:11.5px;background:#7b68ee;color:#fff;font-weight:600;border-radius:5px;padding:6px 12px}
+  .cu-solo{aspect-ratio:auto}
+  .cu-today{color:#5c5c64}
   .cu-section{display:flex;align-items:center;gap:8px;padding:10px 16px;font-size:12.5px;color:#e5484d;font-weight:600}
+  .cu-section.cu-grp{color:#1a1a1e}
   .cu-section .count{color:#a3a3ab;font-weight:500}
   .cu-app table{width:100%;border-collapse:collapse;font-size:10.5px}
   .cu-app th{text-align:left;color:#8b8b93;font-weight:500;font-size:9px;letter-spacing:.03em;padding:5px 8px;border-bottom:1px solid #ececef}
@@ -579,41 +582,24 @@
         <p class="d">Built the practice's project management workspace from scratch in ClickUp, with a customized workflow for each case type, O-1 and beyond. Every case now moves through the same defined stages regardless of which case manager owns it, and nothing lives only in someone's head.</p>
 
         <div class="figure" style="margin-top:24px">
-          <svg class="ill" viewBox="0 0 720 200" fill="none" aria-label="Case board with owner, priority, and due date columns">
-            <g font-family="Inter,sans-serif" font-size="9" letter-spacing="1.6" fill="rgba(242,238,230,.78)">
-              <text x="14" y="20">CASE</text><text x="330" y="20">OWNER</text>
-              <text x="470" y="20">STAGE</text><text x="600" y="20">DUE</text>
-            </g>
-            <line x1="10" y1="30" x2="710" y2="30" stroke="rgba(255,255,255,.12)"/>
-            <g class="fadein" style="transition-delay:.1s">
-              <rect x="10" y="42" width="700" height="34" rx="5" fill="rgba(255,255,255,.03)"/>
-              <rect x="22" y="55" width="150" height="8" rx="4" fill="rgba(242,238,230,.28)"/>
-              <circle cx="340" cy="59" r="9" fill="rgba(217,169,76,.28)"/>
-              <path d="M336 59.5l3 3 5.5-6" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-              <rect x="470" y="53" width="70" height="13" rx="6.5" fill="rgba(95,208,138,.2)"/>
-              <text x="479" y="63" font-family="Inter,sans-serif" font-size="8" fill="#5FD08A" letter-spacing="1">REVIEW</text>
-              <rect x="600" y="55" width="58" height="8" rx="4" fill="rgba(242,238,230,.2)"/>
-            </g>
-            <g class="fadein" style="transition-delay:.22s">
-              <rect x="10" y="84" width="700" height="34" rx="5" fill="rgba(255,255,255,.03)"/>
-              <rect x="22" y="97" width="130" height="8" rx="4" fill="rgba(242,238,230,.28)"/>
-              <circle cx="340" cy="101" r="9" fill="rgba(217,169,76,.28)"/>
-              <path d="M336 101.5l3 3 5.5-6" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-              <rect x="470" y="95" width="70" height="13" rx="6.5" fill="rgba(196,100,60,.22)"/>
-              <text x="479" y="105" font-family="Inter,sans-serif" font-size="8" fill="#C4643C" letter-spacing="1">FILING</text>
-              <rect x="600" y="97" width="58" height="8" rx="4" fill="rgba(242,238,230,.2)"/>
-            </g>
-            <g class="fadein" style="transition-delay:.34s">
-              <rect x="10" y="126" width="700" height="34" rx="5" fill="rgba(255,255,255,.03)"/>
-              <rect x="22" y="139" width="165" height="8" rx="4" fill="rgba(242,238,230,.28)"/>
-              <circle cx="340" cy="143" r="9" fill="rgba(217,169,76,.28)"/>
-              <path d="M336 143.5l3 3 5.5-6" stroke="#D9A94C" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-              <rect x="470" y="137" width="70" height="13" rx="6.5" fill="rgba(217,169,76,.22)"/>
-              <text x="479" y="147" font-family="Inter,sans-serif" font-size="8" fill="#D9A94C" letter-spacing="1">INTAKE</text>
-              <rect x="600" y="139" width="58" height="8" rx="4" fill="rgba(242,238,230,.2)"/>
-            </g>
-          </svg>
-          <div class="cap">One board holds every active case, not memory</div>
+          <div class="cu-app cu-solo">
+            <div class="cu-main">
+              <div class="cu-crumb"><b>{TEMPLATE} O1A Workflow</b><span class="cu-task-btn" style="margin-left:auto">+ Task</span></div>
+              <div class="cu-section cu-grp">▾ Today <span class="count">8</span></div>
+              <table>
+                <tr><th>Name</th><th>Status</th><th>Due date</th><th>Person responsible</th><th>Dependencies</th><th>Priority</th></tr>
+                <tr><td class="name"><span class="cu-circle"></span>Assign Paralegal to Case</td><td><span class="cu-status">TO DO</span></td><td class="cu-today">Today</td><td><span class="cu-tag cos">COS ⌄</span></td><td><span class="cu-dep">Introduce Parale… +1</span></td><td><span class="cu-flag">⚑</span></td></tr>
+                <tr><td class="name"><span class="cu-circle"></span>Introduce Paralegal to Client via Em… <span class="cu-warn">⚠</span></td><td><span class="cu-status">TO DO</span></td><td class="cu-today">Today</td><td><span class="cu-tag intaker">INTAKER ⌄</span></td><td><span class="cu-dep">Assign Paralegal … +1</span></td><td><span class="cu-flag">⚑</span></td></tr>
+                <tr><td class="name"><span class="cu-circle"></span>Set up ClickUp</td><td><span class="cu-status">TO DO</span></td><td class="cu-today">Today</td><td><span class="cu-tag ops">OPERATIONS MANAGER ⌄</span></td><td>–</td><td><span class="cu-flag">⚑</span></td></tr>
+                <tr><td class="name"><span class="cu-circle"></span>Create Slack Channel</td><td><span class="cu-status">TO DO</span></td><td class="cu-today">Today</td><td><span class="cu-tag paralegal">PARALEGAL ⌄</span></td><td><span class="cu-dep">Send Second Invoice</span></td><td><span class="cu-flag">⚑</span></td></tr>
+                <tr><td class="name"><span class="cu-circle"></span>Give Introductory call to Client <span class="cu-warn">⚠</span></td><td><span class="cu-status">TO DO</span></td><td class="cu-today">Today</td><td><span class="cu-tag paralegal">PARALEGAL ⌄</span></td><td><span class="cu-dep">Assign Paralegal to C…</span></td><td><span class="cu-flag">⚑</span></td></tr>
+                <tr><td class="name"><span class="cu-circle"></span>Transfer all information about Client…</td><td><span class="cu-status">TO DO</span></td><td class="cu-today">Today</td><td><span class="cu-tag intaker">INTAKER ⌄</span></td><td>–</td><td><span class="cu-flag">⚑</span></td></tr>
+                <tr><td class="name"><span class="cu-circle"></span>Create Shared and Private Google Drive</td><td><span class="cu-status">TO DO</span></td><td class="cu-today">Today</td><td><span class="cu-tag paralegal">PARALEGAL ⌄</span></td><td><span class="cu-dep">Create Referee Sprea…</span></td><td><span class="cu-flag">⚑</span></td></tr>
+                <tr><td class="name"><span class="cu-circle"></span>Verify GHL Status</td><td><span class="cu-status">TO DO</span></td><td class="cu-today">Today</td><td><span class="cu-tag ops">OPERATIONS MANAGER ⌄</span></td><td><span class="cu-dep">Client Completes Inta…</span></td><td><span class="cu-flag">⚑</span></td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="cap">Every case runs on the same stages, owners, and dependencies</div>
         </div>
 
         <ul class="bullets">
