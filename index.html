@@ -244,16 +244,16 @@
   .gaps .ico{margin-top:3px}
 
   /* ── approach ───────────────────────────── */
-  .approach{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
-  .ap{background:var(--ink);padding:clamp(22px,2.6vw,30px);transition:background .4s ease}
-  .ap:hover{background:var(--ink-3)}
-  .sec-head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:end}
-  .sec-head h2,.sec-head .lede{margin-bottom:0}
-  .ap .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
-  .ap .top .icobox{margin-bottom:0}
-  .ap .num{font-family:var(--serif);font-size:15px;letter-spacing:.1em;color:var(--gold)}
-  .ap h3{font-size:clamp(16px,1.6vw,20px);font-weight:500;letter-spacing:-.01em;margin-bottom:10px;line-height:1.3}
-  .ap p{font-size:clamp(14px,1.4vw,15.5px);color:var(--paper-dim);line-height:1.6}
+  .approach{display:grid;grid-template-columns:repeat(4,1fr);gap:0 clamp(20px,2.4vw,32px);margin-top:48px}
+  .ap{position:relative}
+  .ap .top{display:flex;align-items:center;margin-bottom:22px}
+  .ap .top .icobox{width:62px;height:62px;border-radius:50%;margin-bottom:0;flex-shrink:0;background:var(--ink-2);border:1px solid rgba(217,169,76,.45)}
+  .ap .top .icobox .ico{width:24px;height:24px}
+  .ap .top::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(217,169,76,.45),var(--line-2));margin-right:calc(-1 * clamp(20px,2.4vw,32px))}
+  .ap:last-child .top::after{margin-right:0;background:linear-gradient(90deg,rgba(217,169,76,.45),transparent)}
+  .ap .num{font-family:var(--serif);font-size:15px;letter-spacing:.14em;color:var(--gold);display:block;margin-bottom:8px}
+  .ap h3{font-size:clamp(19px,1.9vw,23px);font-weight:500;letter-spacing:-.012em;margin-bottom:10px;line-height:1.3}
+  .ap p{font-size:clamp(15px,1.45vw,16.5px);color:var(--paper-dim);line-height:1.6}
 
   .leak{
     margin-top:40px;border:1px solid rgba(217,169,76,.28);background:var(--gold-soft);border-radius:6px;
@@ -354,9 +354,8 @@
   .rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
   .rv.in{opacity:1;transform:none}
 
-  @media(min-width:1001px) and (max-width:1180px){.ap h3{min-height:2.6em}}
   @media(max-width:1000px){
-    .approach{grid-template-columns:repeat(2,1fr)}.sec-head{grid-template-columns:1fr;gap:18px}
+    .approach{grid-template-columns:repeat(2,1fr);gap:36px clamp(20px,3vw,32px)}.ap .top::after{display:none}
     .split{grid-template-columns:1fr;gap:40px}
     .rgrid{grid-template-columns:1fr}
     .tl{grid-template-columns:1fr;gap:32px}
@@ -529,16 +528,14 @@
 <section id="approach" style="background:var(--ink-2);border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="rule rv"></div>
-    <div class="sec-head">
     <h2 class="rv">My Approach</h2>
     <p class="lede rv">Before automating anything, the practice's actual case flow had to be mapped end to end, and the team had to be rebuilt around people who fit where it was headed.</p>
-    </div>
 
     <div class="approach">
-      <div class="ap rv"><div class="top"><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></div><span class="num">01</span></div><h3>Audit the Case Flow</h3><p>Mapped every step from first client contact through case resolution, including where founder involvement was actually required versus habitual.</p></div>
-      <div class="ap rv"><div class="top"><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c.7-3.6 3.2-5.6 6.5-5.6s5.8 2 6.5 5.6"/><path d="M16 4.3a3.2 3.2 0 0 1 0 6.2"/><path d="M17.5 14.4c2.7.5 4.5 2.3 5 5.6"/></svg></div><span class="num">02</span></div><h3>Rebuild the Team</h3><p>Let go of team members who didn't align with the direction of the practice, and hired case managers who did.</p></div>
-      <div class="ap rv"><div class="top"><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div><span class="num">03</span></div><h3>Build the System</h3><p>Stood up the project management structure, case handling standards, and central visibility layer the team now runs on.</p></div>
-      <div class="ap rv"><div class="top"><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div><span class="num">04</span></div><h3>Automate and Connect</h3><p>Connected the case management, intake, and reporting tools with AI-powered workflows so repeatable work ran without manual handling.</p></div>
+      <div class="ap rv"><div class="top"><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/><path d="M10.5 7.5v6M7.5 10.5h6"/></svg></div></div><span class="num">01</span><h3>Audit the Case Flow</h3><p>Mapped every step from first client contact through case resolution, including where founder involvement was actually required versus habitual.</p></div>
+      <div class="ap rv"><div class="top"><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c.7-3.6 3.2-5.6 6.5-5.6s5.8 2 6.5 5.6"/><path d="M16 4.3a3.2 3.2 0 0 1 0 6.2"/><path d="M17.5 14.4c2.7.5 4.5 2.3 5 5.6"/></svg></div></div><span class="num">02</span><h3>Rebuild the Team</h3><p>Let go of team members who didn't align with the direction of the practice, and hired case managers who did.</p></div>
+      <div class="ap rv"><div class="top"><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg></div></div><span class="num">03</span><h3>Build the System</h3><p>Stood up the project management structure, case handling standards, and central visibility layer the team now runs on.</p></div>
+      <div class="ap rv"><div class="top"><div class="icobox"><svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div></div><span class="num">04</span><h3>Automate and Connect</h3><p>Connected the case management, intake, and reporting tools with AI-powered workflows so repeatable work ran without manual handling.</p></div>
     </div>
 
     <!-- Highest-leverage sentence on the page. One line. Name the thing. -->
