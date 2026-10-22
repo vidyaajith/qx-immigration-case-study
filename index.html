@@ -252,6 +252,17 @@
   .rail-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);background:transparent;color:var(--paper);font-size:16px;cursor:pointer;transition:background .3s,border-color .3s}
   .rail-btn:hover{background:var(--gold-soft);border-color:var(--gold)}
 
+  /* ── COS agent mockup ───────────────────── */
+  .cs-app{width:100%;max-width:760px;margin:0 auto;aspect-ratio:16/9;background:#faf9f5;border:1px solid #e2e0d8;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;font-family:-apple-system,'Segoe UI',Roboto,Inter,sans-serif;color:#1f1e1d}
+  .cs-head{display:flex;align-items:center;gap:8px;padding:9px 16px;border-bottom:1px solid #ece9e0;font-size:11px;flex-shrink:0}
+  .cs-head b{font-weight:600}.cs-spark{color:#c4643c;font-size:14px}
+  .cs-chips{margin-left:auto;display:flex;gap:5px}.cs-chips i{font-style:normal;font-size:8.5px;color:#6b6a66;border:1px solid #e0ddd3;border-radius:100px;padding:2px 8px;background:#fff}
+  .cs-body{padding:12px 20px;font-size:10.5px;line-height:1.5;overflow:hidden;flex:1;min-height:0}
+  .cs-body p{margin:0 0 6px}.cs-body ul{margin:0 0 6px;padding-left:16px}.cs-body li{margin-bottom:3px}
+  .cs-user{margin:0 0 8px auto;max-width:70%;background:#efece4;border-radius:10px;padding:7px 11px;width:fit-content}
+  .cs-tool{color:#8a8985;font-size:9.5px;margin-bottom:6px}
+  .cs-lbl{color:#3b3a37}.cs-big{font-weight:700;font-size:13px}
+
   .draw path,.draw line,.draw circle,.draw rect,.draw polyline{
     stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);
     transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
@@ -648,7 +659,7 @@
       <div>
         <h3><svg class="ico hico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span>SOPs and Automation</span></h3>
         <p class="sub">The repeatable work stopped needing a person to remember it.</p>
-        <p class="d">Documented an SOP library for the practice's recurring case and intake work, then built AI-powered automation connecting the case management, CRM, and intake systems so the repeatable steps ran without manual handling. Seven platforms, including ClickUp, GoHighLevel, Slack, and Gmail, now operate as one interconnected system instead of seven separate habits.</p>
+        <p class="d">Documented an SOP library for the practice's recurring case and intake work, then built AI-powered automation connecting the case management, CRM, and intake systems so the repeatable steps ran without manual handling. On top of it sits a custom Chief of Staff (COS) agent that answers any question about a case or the pipeline and flags what needs attention. Seven platforms, including ClickUp, GoHighLevel, Slack, and Gmail, now operate as one interconnected system instead of seven separate habits.</p>
 
         <div class="rail" data-rail>
           <div class="rail-track">
@@ -730,13 +741,48 @@
           </div>
           <div class="cap">Automation replaces the manual reminder, no one has to remember</div>
         </div>
+                    <div class="figure">
+          <div class="cs-app">
+            <div class="cs-head"><span class="cs-spark">✻</span><b>Chief of Staff</b><span class="cs-chips"><i>ClickUp</i><i>Slack</i><i>GoHighLevel</i></span></div>
+            <div class="cs-body">
+              <div class="cs-user">Why hasn't the Reyes case been sent to the union/peer group?</div>
+              <div class="cs-tool">Used ClickUp: Filter Tasks ›</div>
+              <p>It's stuck on payment logistics to the union, not on anything with the client.</p>
+              <p class="cs-lbl">Timeline from ClickUp + Slack:</p>
+              <ul>
+                <li>Client already paid the firm for the consultation, invoice sent. Both done.</li>
+                <li><b>"Send the case to Union/Peer Consultations"</b> has sat in <b>"under review"</b> for a week.</li>
+                <li><b>"Pay Union/Peer group"</b> is still marked <b>"to do"</b>, untouched.</li>
+              </ul>
+              <p>Why: the union requires payment by check, not card. Finance asked how to handle it, an approval was needed, and it was approved yesterday.</p>
+            </div>
           </div>
-          <div class="rail-nav"><span class="rail-count">1 / 2</span><button type="button" class="rail-btn" data-dir="-1" aria-label="Previous example">←</button><button type="button" class="rail-btn" data-dir="1" aria-label="Next example">→</button></div>
+          <div class="cap">Ask the COS agent anything about a case, it fetches the answer</div>
+        </div>
+          <div class="figure">
+          <div class="cs-app">
+            <div class="cs-head"><span class="cs-spark">✻</span><b>Chief of Staff</b><span class="cs-chips"><i>ClickUp</i><i>Slack</i><i>GoHighLevel</i></span></div>
+            <div class="cs-body">
+              <p class="cs-lbl cs-big">Worth a look:</p>
+              <ul>
+                <li><b>Wins:</b> 6 were logged in the last 7 days, but 5 are $0 opportunities created as already-won. Only $8,000 is real revenue, so "days since last close" is misleading.</li>
+                <li><b>Client A</b> (submitted) has a blocked "RFE Response" task, and the oldest unanswered thread at 120 days.</li>
+                <li><b>Filed this week:</b> Client B and Client C. Client C's Slack is flagged: the attorney is asking about travel history.</li>
+                <li><b>Pipeline:</b> 64 open, 60% stuck in Contact Attempted. Calls dropped 30% week over week.</li>
+                <li><b>Ops Review:</b> all 12 "this week priority" tasks are stale. Four haven't been touched in 7 days.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cap">A weekly ops overview from the COS agent, flagging what needs attention</div>
+        </div>
+          </div>
+          <div class="rail-nav"><span class="rail-count">1 / 4</span><button type="button" class="rail-btn" data-dir="-1" aria-label="Previous example">←</button><button type="button" class="rail-btn" data-dir="1" aria-label="Next example">→</button></div>
         </div>
 
         <ul class="bullets">
           <li><svg class="ico" viewBox="0 0 24 24"><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg><span><b>SOP library built from scratch.</b> Every recurring case and intake step now has a documented standard.</span></li>
           <li><svg class="ico" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span><b>AI-powered automation.</b> Repeatable case and intake work now runs without manual handling.</span></li>
+          <li><svg class="ico" viewBox="0 0 24 24"><path d="M4 4v16l4-3h12V4Z"/><path d="M8 9h8M8 13h5"/></svg><span><b>COS agent.</b> Ask a question in plain language and it pulls the answer from ClickUp, Slack, and GoHighLevel.</span></li>
         </ul>
       </div>
     </div>
