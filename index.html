@@ -243,6 +243,15 @@
   .cr-attn{margin:0 16px 12px;border:1px solid #e6e3dc;border-left:3px solid #2e6b4f;background:#fafafa;padding:7px 10px;font-size:9px;color:#2e6b4f;flex-shrink:0}
   .cr-attn b{color:#1a1a1a;margin-right:8px}
 
+  /* ── scrollable example rail ────────────── */
+  .rail{margin-top:24px}
+  .rail-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent;padding-bottom:12px}
+  .rail-track .figure{flex:0 0 88%;scroll-snap-align:start;margin:0}
+  .rail-nav{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-top:10px}
+  .rail-count{font-size:12px;letter-spacing:.16em;color:var(--paper-faint);margin-right:auto;text-transform:uppercase}
+  .rail-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line-2);background:transparent;color:var(--paper);font-size:16px;cursor:pointer;transition:background .3s,border-color .3s}
+  .rail-btn:hover{background:var(--gold-soft);border-color:var(--gold)}
+
   .draw path,.draw line,.draw circle,.draw rect,.draw polyline{
     stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);
     transition:stroke-dashoffset 1.5s cubic-bezier(.22,1,.36,1);
@@ -641,7 +650,9 @@
         <p class="sub">The repeatable work stopped needing a person to remember it.</p>
         <p class="d">Documented an SOP library for the practice's recurring case and intake work, then built AI-powered automation connecting the case management, CRM, and intake systems so the repeatable steps ran without manual handling. Seven platforms, including ClickUp, GoHighLevel, Slack, and Gmail, now operate as one interconnected system instead of seven separate habits.</p>
 
-        <div class="figure" style="margin-top:24px">
+        <div class="rail" data-rail>
+          <div class="rail-track">
+          <div class="figure">
           <div class="gd-app">
             <div class="gd-outline">
               <div class="h">Document tabs</div>
@@ -683,7 +694,7 @@
           <div class="cap">SOP library, documented and version controlled</div>
         </div>
 
-        <div class="figure" style="margin-top:24px">
+        <div class="figure">
           <div class="cua-app">
             <div class="cua-head">
               <div><span class="t">Reminder to Pay Union/Peer after case has been sent</span> <span class="in">in QX Clients</span></div>
@@ -718,6 +729,9 @@
             </div>
           </div>
           <div class="cap">Automation replaces the manual reminder, no one has to remember</div>
+        </div>
+          </div>
+          <div class="rail-nav"><span class="rail-count">1 / 2</span><button type="button" class="rail-btn" data-dir="-1" aria-label="Previous example">←</button><button type="button" class="rail-btn" data-dir="1" aria-label="Next example">→</button></div>
         </div>
 
         <ul class="bullets">
@@ -928,6 +942,20 @@
     });
   },{threshold:.5});
   document.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el);});
+})();
+
+(function(){
+  document.querySelectorAll('[data-rail]').forEach(function(rail){
+    var track=rail.querySelector('.rail-track'),slides=track.children,count=rail.querySelector('.rail-count');
+    function idx(){var best=0,d=1e9;for(var i=0;i<slides.length;i++){var x=Math.abs(slides[i].offsetLeft-track.offsetLeft-track.scrollLeft);if(x<d){d=x;best=i;}}return best;}
+    function upd(){count.textContent=(idx()+1)+' / '+slides.length;}
+    track.addEventListener('scroll',upd,{passive:true});
+    rail.querySelectorAll('.rail-btn').forEach(function(b){b.addEventListener('click',function(){
+      var n=Math.max(0,Math.min(slides.length-1,idx()+parseInt(b.dataset.dir,10)));
+      track.scrollTo({left:slides[n].offsetLeft-track.offsetLeft,behavior:'smooth'});
+    });});
+    upd();
+  });
 })();
 </script>
 </body>
